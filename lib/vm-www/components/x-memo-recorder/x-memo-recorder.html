@@ -1,0 +1,23 @@
+<polymer-element name="x-memo-recorder" attributes="audioRecUrl reload">
+  <template>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <core-ajax id="ajax"
+      url="http://localhost:3000/memo"
+      method="POST"
+      contentType="multipart/form-data"
+      handleAs="json"
+      withCredentials="true"
+      on-core-response="{{handleResponse}}">
+    </core-ajax>
+
+    <div horizontal center-justified layout>
+      <paper-fab icon="av:mic" id="startRecord" on-click="{{startRecord}}"></paper-fab>
+      <paper-fab icon="av:stop" id="stopRecord" on-click="{{stopRecord}}"></paper-fab>
+      <paper-fab icon="save" id="save" on-click="{{saveRecord}}"></paper-fab>
+    </div>
+    
+  </template>
+  <script src="../../../js/voice-memos/voice-recorder/voice-recorder.js"></script>
+  <script src="js/script.js"></script>
+</polymer-element>

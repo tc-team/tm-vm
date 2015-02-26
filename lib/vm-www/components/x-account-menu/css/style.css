@@ -1,0 +1,16 @@
+paper-icon-button::shadow core-icon{
+  width: 40px ;
+  height: 40px;
+}
+paper-dropdown {
+  top: 45px;
+  left: -69px;
+} 
+.menu {
+  color: #212121;
+  margin: 0;
+}
+#logOut {
+	color: #03a9f4;
+	font-size: 18px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Target-maker</title>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <link href="components/elements.html" rel="import">
+    </head>
+
+    <body unresolved>
+        <template is="auto-binding">
+            <x-panel sessionState="{{isSession}}">
+            
+                <x-user-session sessionState="{{isSession}}"></x-user-session>
+
+                <app-router mode="hash">
+
+                    <app-route path="/login" import="/components/x-login-register-page/x-login-register-page.html" bindRouter>
+                    </app-route>
+
+                    <app-route path="/voice-memos" import="/components/x-voice-memos-page/x-voice-memos-page.html" bindRouter>
+                    </app-route>
+
+                    <app-route path="/target-maker|//" regex import="/components/x-target-maker-page/x-target-maker-page.html" bindRouter>
+                    </app-route>
+
+                    <app-route path="*" redirect="/"></app-route>
+
+                </app-router>
+
+            </x-panel>
+        </template>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>

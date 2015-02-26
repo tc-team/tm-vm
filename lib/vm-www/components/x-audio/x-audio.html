@@ -1,0 +1,23 @@
+<polymer-element name="x-audio" attributes="src name">
+	<template>
+		<link rel="stylesheet" href="css/style.css">
+		
+		<div class="top">
+			{{name}}
+		</div>
+		
+		<div class="slider">
+			<paper-slider id="audio-slider" min="0" max="{{length}}" value="{{value}}" on-change="{{changeSlider}}"></paper-slider>
+		</div>
+		<span class="value">{{time}}</span>
+		<span class="duration">{{duration}}</span>
+
+		<div class="bottom" horizontal layout center>
+			<paper-fab mini id="playButton" icon="av:play-arrow" on-click="{{play}}"></paper-fab>
+			<paper-fab mini id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" on-click="{{mute}}"></paper-fab>
+			<paper-slider id="volumeSlider" min="0" max="10" value="{{volume}}" on-change="{{changeVolume}}"></paper-slider>
+		</div>
+		
+	</template>
+	<script src='js/script.js'></script>
+</polymer-element>

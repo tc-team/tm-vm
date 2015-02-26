@@ -1,0 +1,26 @@
+<polymer-element name="x-memos-list">
+	<template>
+		<link rel="stylesheet" href="css/style.css">
+
+		<core-ajax 
+			id="ajax"
+			auto="false"
+			url="http://localhost:3000/memo"
+			method="GET"
+			handleAs="json"
+			withCredentials="true"
+			response="{{memos}}">
+		</core-ajax>
+
+		<div layout vertical center>
+			
+			
+			<template repeat="{{memo in memos}}">
+				<x-audio src="{{memo.pathToFile}}" name="{{memo.name}}"></x-audio>
+			</template>
+
+		</div>
+	</template>
+
+	<script src="js/script.js"></script>
+</polymer-element>

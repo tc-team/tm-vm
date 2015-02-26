@@ -1,0 +1,14 @@
+<polymer-element name="x-user-session" attributes="sessionState">
+	<template>
+	    <core-ajax id="ajax"
+		    auto
+		    url="http://localhost:3000/session"
+		    method="GET"
+		    handleAs="json"
+		    withCredentials="true"
+		    on-core-response="{{handleResponse}}">
+		</core-ajax>		
+	</template>
+
+	<script src="js/script.js"></script>
+</polymer-element>

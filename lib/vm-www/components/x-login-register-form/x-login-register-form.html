@@ -1,0 +1,17 @@
+<polymer-element name="x-login-register-form" attributes="logged">
+  <template>
+    <link rel="stylesheet" href="css/style.css">
+      <paper-shadow z="1">
+        <paper-tabs selected="{{select}}"  flex>
+          <paper-tab>Log In</paper-tab>
+          <paper-tab>Create Account</paper-tab>
+        </paper-tabs>
+        <core-pages selected="{{select}}">          
+          <x-login-form islogged="{{logged}}"></x-login-form>
+          <x-register-form islogged="{{logged}}"></x-register-form>
+        </core-pages>
+      </paper-shadow>
+  </template>
+  
+  <script src="js/script.js"></script>
+</polymer-element>

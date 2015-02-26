@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  padding: 30px;
+  color: #212121;
+  text-align: center;
+}
+
+paper-button {
+	display: block;
+	margin: 20px 0 0 0;
+	background-color: #FF4081;
+	color: #fff;
+}
+
+core-icon.icon{
+	margin-top: 20px;
+	height: 70px !important;
+	width: 70px !important;
+	color: #D1C4E9;
+}
+paper-input-decorator {
+	text-align: left;
+}
+
+paper-input-decorator[focused] /deep/ .floated-label .label-text {
+	color: #FF4081;
+}
+
+paper-input-decorator /deep/ .focused-underline {
+    background-color: #FF4081;
+}
+#error {
+	font: italic 14px serif;
+	color: #FF4081;	
+}

@@ -1,0 +1,45 @@
+{
+  "env": "dev",
+	"server": {
+		"host": "localhost",
+		"port": 3000
+	},
+  "web_server": {
+    "host": "localhost",
+    "port": 80
+  },
+	"session": {
+		"secret": "FFRPLXN4kisBn9pdcGPm0ss0yyAsHzfJ",
+		"key": "sid",
+		"cookie": {
+			"path": "/",
+			"httpOnly": false,
+			"maxAge": null
+		}
+	},
+	"redis": {
+    "host": "localhost",
+    "port": 6379,
+    "ttl": 1800,
+    "database": 0,
+    "password": null
+  },
+  "mysql": {
+    "host": "localhost",
+  	"user": "root",
+  	"password": "1234",
+  	"database": "db_clients"
+  },
+  "paypal": {
+    "host": "api.sandbox.paypal.com",           
+    "client_id": "AYW5HBCAo0JeWg50Lo3b9u0DX9QH9rcvc07oOS_UJjcvedIlSZTjSgpC3J4H",
+    "client_secret": "EMHKJBAhRUgiR5y0RlPC-cv_ZixVCXGPMayt9C6683_8q1kp-qeE7h05Hb8p"
+  },
+  "mail": {
+    "service": "Gmail",
+    "auth": {
+        "user": "test.tkachuk@gmail.com",
+        "pass": "test159753"
+    }
+  }
+}
