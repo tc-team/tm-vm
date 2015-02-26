@@ -1,3 +1,4 @@
 # tm-vm
-First TC project.
-tm UI -targetmakerIU
+First TC project
+TM UI - targetmaker UI
+
