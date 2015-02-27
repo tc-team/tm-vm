@@ -1,0 +1,31 @@
+<polymer-element name="more-dropdown"> 
+	<template>
+		<link rel="stylesheet" type="text/css" href="more-dropdown.css">
+
+		<polymer-element name="x-trigger" extends="core-icon-button" relative on-tap="{{toggle}}">
+			<script>
+				Polymer({
+					toggle: function() {
+						if (!this.dropdown) {
+							this.dropdown = this.querySelector('core-dropdown');
+						}
+					this.dropdown && this.dropdown.toggle();
+					}
+				});
+			</script>
+		</polymer-element>
+
+		<x-trigger icon="more-vert">
+			<core-dropdown halign="right">
+				<paper-item on-click="{{showProfile}}">
+					<core-icon icon="social:person" aria-label="person"></core-icon> Profile
+				</paper-item>
+				<paper-item on-tap="{{showLogOutDialog}}">
+					<core-icon icon="icons:settings-power" aria-label="exit"></core-icon> Log Out
+				</paper-item>
+			</core-dropdown>
+		</x-trigger>
+	</template>
+	
+	<script src="more-dropdown.js"></script>
+</polymer-element>

@@ -27,8 +27,8 @@
   "mysql": {
     "host": "localhost",
   	"user": "root",
-  	"password": "1234",
-  	"database": "db_clients"
+  	"password": "root",
+  	"database": "tm-vm"
   },
   "paypal": {
     "host": "api.sandbox.paypal.com",           
