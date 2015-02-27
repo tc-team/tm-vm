@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.6.19, for linux-glibc2.5 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.19, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: db_clients
 -- ------------------------------------------------------
@@ -58,7 +58,7 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`),
   KEY `username` (`username`),
   CONSTRAINT `product_ibfk_1` FOREIGN KEY (`username`) REFERENCES `profile` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,14 +120,6 @@ LOCK TABLES `token` WRITE;
 /*!40000 ALTER TABLE `token` DISABLE KEYS */;
 /*!40000 ALTER TABLE `token` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'db_clients'
---
-
---
--- Dumping routines for database 'db_clients'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -138,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-27 14:14:18
+-- Dump completed on 2015-02-27 15:08:18
