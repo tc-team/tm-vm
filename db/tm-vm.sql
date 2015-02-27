@@ -15,9 +15,16 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+DROP DATABASE IF EXISTS `tm-vm`;
+
+CREATE DATABASE `tm-vm`;
+
+USE `tm-vm`;
+
+
 --
 -- Table structure for table `memo`
---
 
 DROP TABLE IF EXISTS `memo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -130,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-27 15:08:18
+-- Dump completed on 2015-02-27 15:19:39

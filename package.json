@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "deploy": "mysql -u root -p < db/tm-vm.sql",
     "start": "sudo node server.js",
     "test": "NODE_ENV=test mocha --timeout=5000"
   },
