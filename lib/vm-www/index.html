@@ -13,6 +13,8 @@
             
                 <x-user-session sessionState="{{isSession}}"></x-user-session>
 
+                <x-account-menu logged="{{isSession}}"></x-account-menu>
+
                 <app-router mode="hash">
 
                     <app-route path="/login" import="/components/x-login-register-page/x-login-register-page.html" bindRouter>

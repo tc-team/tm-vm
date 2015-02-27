@@ -1,27 +1,40 @@
-<polymer-element name="x-panel" attributes="sessionState" noscript>
-    <template>
-        <link rel="stylesheet" href="css/style.css">
-    	<core-header-panel flex>
-            <core-toolbar vertical layout>
-                <core-icon icon="home"></core-icon>
-                <span class="title">App</span>
-                <template if="{{sessionState}}">
-                    <paper-tabs selected="0">
-                        <paper-tab>
-                            <a href="/#/target-maker">Target-maker</a>
-                        </paper-tab>
-                        <paper-tab>
-                            <a href="/#/voice-memos">Voice-memos</a>
-                        </paper-tab>
-                    </paper-tabs>
-                    <span flex></span>
-                    <x-account-menu logged="{{sessionState}}"></account-menu>
-                </template>
-            </core-toolbar>
+<polymer-element name="x-panel" attributes="sessionState">
+	<template>
+		<link rel="stylesheet" type="text/css" href="x-panel.css">
 
-            <content></content>
+		<core-header-panel>
 
-        </core-header-panel>
+			<core-toolbar id="coreToolbar">
+				<paper-icon-button id="toggle-button" 
+									icon="menu" 
+									aria-label="menu"
+									on-click="{{buttonClick}}">
+				</paper-icon-button>
 
-    </template>
+				<div class="ligthColoredContent">app</div>
+				
+				<span flex></span>
+
+				<section>
+					<div class="ligthColoredContent">username</div>
+				</section>
+
+				<section>
+					<content select="x-account-menu"></content>
+				</section>
+
+				<paper-tabs id="navPanel" class="bottom fit" hidden selected="0" role="tablist" style="width: 348px;" horizontal center layout>
+					<paper-tab name="map"><a href="/#/map">target-maker</a></paper-tab>	
+					<paper-tab name="vm"><a href="/#/vm">voise-memos</a></paper-tab>
+				</paper-tabs>
+
+			</core-toolbar>
+
+			<content></content>
+
+		</core-header-panel>
+	</template>
+
+	<script src="x-panel.js"></script>
+
 </polymer-element>
