@@ -4,3 +4,8 @@ paper-fab {
 paper-fab {
   margin: 0 20px;
 }
+div {
+	position: absolute;
+	top: 14px;
+	right: 262px;
+}

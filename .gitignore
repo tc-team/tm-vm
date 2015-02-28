@@ -1,3 +1,14 @@
-node_modules/*
-lib/vm-www/bower_components/*
-config/*
+#### Local node modules ###
+node_modules
+
+### Local bower components ###
+lib/vm-www/bower_components/
+
+### Config folder ###
+config
+
+### Voice-memos folder ###
+memos
+
+### Logs ###
+*.log
