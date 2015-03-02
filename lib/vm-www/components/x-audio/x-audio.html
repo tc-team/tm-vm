@@ -1,3 +1,35 @@
+<polymer-element name="x-audio" attributes="src name disabled">
+	<template>
+		<link rel="stylesheet" href="css/style.css">
+
+		<div id="container" horizontal layout>
+			<core-icon id="playButton" icon="av:play-arrow" on-click="{{play}}"></core-icon>
+			<div class="audio" vertical layout>
+				<div>
+					<span id="name">{{name}}</span>
+					<span id="remainder">{{remainder}}</span>
+				</div>
+				<paper-slider id="audio_slider" min="0" max="{{duration}}" value="{{value}}" on-change="{{changeCurrentTime}}"></paper-slider>
+			</div>
+			<div class="volume" vertical layout>
+				<span>
+					<core-icon id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" on-click="{{mute}}"></core-icon>			
+				</span>
+				<paper-slider id="volume_slider" min="0" max="10" value="{{volume}}" on-change="{{changeVolume}}"></paper-slider>
+			</div>
+		</div>
+
+	</template>
+	<script src='js/script.js'></script>
+</polymer-element>
+
+
+
+
+
+
+<!-- 
+
 <polymer-element name="x-audio" attributes="src name">
 	<template>
 		<link rel="stylesheet" href="css/style.css">
@@ -21,3 +53,6 @@
 	</template>
 	<script src='js/script.js'></script>
 </polymer-element>
+
+
+ -->
