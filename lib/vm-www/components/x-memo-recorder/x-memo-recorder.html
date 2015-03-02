@@ -1,4 +1,4 @@
-<polymer-element name="x-memo-recorder" attributes="audioRecUrl reload">
+<polymer-element name="x-memo-recorder" attributes="reload">
     <template>
         <link rel="stylesheet" href="css/style.css">
         
@@ -10,15 +10,28 @@
             withCredentials="true"
             on-core-response="{{handleResponse}}">
         </core-ajax>
+        
 
-
-        <x-audio src="{{audioRecord}}">
+        <div id="error" hidden?="{{isHidden}}" horizontal center-justified layout>
+            <core-icon icon="error"></core-icon>  
+            <span>To save the memo you need to buy extra space</span>
+        </div>
+        
+        <div horizontal layout>
+            <paper-input-decorator floatingLabel label="Name">
+                <input id="nameInput" is="core-input" type="text" value="{{memoName}}" autofocus></input>
+            </paper-input-decorator>
+            <span flex></span>
+            <span id="recTime">RECORDING: {{recTime}}</span>
+        </div>
+    
+        <x-audio src="{{audioRecUrl}}" name="{{memoName}}" id="recAudio" disabled="true">
         </x-audio>
 
-        <div horizontal center-justified layout>
+        <div id="recorderControls" horizontal center-justified layout>
+            <paper-fab mini icon="delete" id="deleteRecord" on-click="{{deleteRecord}}"></paper-fab>
             <paper-fab icon="av:mic" id="startRecord" on-click="{{startRecord}}"></paper-fab>
-            <paper-fab icon="av:stop" id="stopRecord" on-click="{{stopRecord}}"></paper-fab>
-            <paper-fab icon="save" id="save" on-click="{{saveRecord}}"></paper-fab>
+            <paper-fab mini icon="save" id="save" on-click="{{saveRecord}}"></paper-fab>
         </div>
 
     </template>

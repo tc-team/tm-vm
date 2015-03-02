@@ -1,0 +1,67 @@
+<polymer-element name="x-memo-item" attributes="name src memoId reloadList">
+	<template>
+		<link rel="stylesheet" href="css/style.css">
+
+		<core-ajax id="ajaxDelMemo"
+			auto="false"
+			url="http://localhost:3000/memo/{{memoId}}"
+			method="DELETE"
+			handleAs="json"
+			withCredentials="true"
+			on-core-response="{{handleResponseDell}}">
+		</core-ajax>
+
+
+		<core-ajax id="ajaxEditMemo"
+			auto="false"
+			url="http://localhost:3000/memo/{{memoId}}"
+			method="PUT"
+			params = '{
+	        	"newName": "{{newName}}"
+	      	}'
+			handleAs="json"
+			withCredentials="true"
+			on-core-response="{{handleResponseEdit}}">
+		</core-ajax>
+
+
+		<div relative>
+			<x-audio src="{{src}}" name="{{name}}"></x-audio>
+			
+			<div class="more">
+				<paper-menu-button>
+				    <paper-icon-button icon="more-vert"></paper-icon-button>
+				    <paper-dropdown class="dropdown" halign="right">
+				        <core-menu class="menu">
+				        	<paper-item on-click="{{deleteMemo}}">
+				        		<core-icon icon="delete"></core-icon>
+				        		Delete
+				        	</paper-item>
+				        	<paper-item on-click="{{editMemo}}">
+								<core-icon icon="create"></core-icon>
+								Edit
+				        	</paper-item>
+				        </core-menu>
+				    </paper-dropdown>
+				</paper-menu-button>
+			</div>
+		</div>
+
+		<paper-action-dialog id='deleteDialog' backdrop autoCloseDisabled>
+	      	<p>Are you sure you want to delete memo "{{name}}"?</p>
+			<paper-button dismissive>No</paper-button>
+	      	<paper-button on-click="{{executeDelete}}" affirmative>Yes</paper-button>
+	    </paper-action-dialog>
+
+	    <paper-action-dialog id='editDialog' backdrop autoCloseDisabled>
+	      	<p>Edit memo name: </p>
+	      	<paper-input-decorator floatingLabel label="{{name}}">
+                <input id="nameInput" is="core-input" type="text" value="{{newName}}" autofocus></input>
+            </paper-input-decorator>
+			<paper-button dismissive>No</paper-button>
+	      	<paper-button on-click="{{executeEdit}}" affirmative>Yes</paper-button>
+	    </paper-action-dialog>
+	</template>
+
+	<script src="js/script.js"></script>
+</polymer-element>
