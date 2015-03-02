@@ -38,39 +38,3 @@ paper-button {
 paper-button::shadow #ripple {
   color: #FF4081;
 }
-
-
-
-/* 
-:host {
-	display: block;
-  	width: 800px;
-	margin: 20px auto;
-	background-color: #fff;
-	position: relative;
-}
-core-toolbar {
-	background-color: #512DA8;
-	color: #fff;
-}
-paper-fab {
-	background-color: #FF4081;
-}
-paper-fab#addMemosButton {
-	position: absolute;
-	top: 36px;
-	right: 36px;
-}
-core-collapse {
-	border-bottom: 1px solid #B6B6B6;
-	position: relative;
-}
-core-collapse paper-fab {
-	margin: 0 20px;
-}
-core-collapse audio {
-	display: block;
-	width: 70%;
-	margin: 0 auto 20px auto;
-}
- */

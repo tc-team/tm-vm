@@ -4,9 +4,6 @@ node_modules
 ### Local bower components ###
 lib/vm-www/bower_components/
 
-### Config folder ###
-config
-
 ### Voice-memos folder ###
 memos
 
