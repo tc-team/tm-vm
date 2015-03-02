@@ -27,10 +27,10 @@
   "mysql": {
     "host": "localhost",
   	"user": "root",
-  	"password": "1234",
+  	"password": "root",
   	"database": "tm-vm"
   },
-  "paypal": {
+  "<p></p>aypal": {
     "host": "api.sandbox.paypal.com",           
     "client_id": "AYW5HBCAo0JeWg50Lo3b9u0DX9QH9rcvc07oOS_UJjcvedIlSZTjSgpC3J4H",
     "client_secret": "EMHKJBAhRUgiR5y0RlPC-cv_ZixVCXGPMayt9C6683_8q1kp-qeE7h05Hb8p"
