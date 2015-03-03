@@ -18,7 +18,7 @@ core-toolbar {
 	transition: height 0.3s;
 }
 
-paper-tab {
+paper-tabs {
 	box-shadow: none;
 }
 

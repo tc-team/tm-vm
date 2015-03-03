@@ -1,0 +1,17 @@
+
+<polymer-element name="x-map">
+	<template>
+		<link rel="stylesheet" type="text/css" href="css/x-map.css">
+
+ 		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
+		<google-map map="{{map}}"
+					latitude="{{localLat}}"
+					longitude="{{localLong}}"
+					zoom="{{zoom}}"
+					disableDefaultUI>
+		</google-map>
+	</template>
+	
+	 <script src="js/x-map.js"></script>
+</polymer-element>
+
