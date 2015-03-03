@@ -8,19 +8,28 @@
             method="GET"
             handleAs="json"
             withCredentials="true"
-            on-core-response="{{handleResGetProf}}">
+            on-core-response="{{handleResGetProff}}">
         </core-ajax>
 
-        <core-ajax id="setProfile"
+        <core-ajax id="setEmail"
             auto="false"
             url="http://localhost:3000/user"
             method="PUT"
             params = '{
-                "newEmail": "{{newName}}"
+                "newEmail": "{{newEmail}}"
             }'
             handleAs="json"
             withCredentials="true"
-            on-core-response="{{handleResSetProff}}">
+            on-core-response="{{handleResSetEmail}}">
+        </core-ajax>
+
+        <core-ajax id="createToken"
+            auto="false"
+            url="http://localhost:3000/token"
+            method="POST"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResCreateTok}}">
         </core-ajax>
 
         <core-ajax id="deleteUser"
@@ -51,7 +60,7 @@
                 <h3>Email:</h3>
                 <paper-input-decorator floatingLabel label="{{user.email}}">
                     <input id="email" is="core-input" type="email" value="{{newEmail}}" autofocus></input>
-                    <core-icon icon="save" on-click="changeEmail"></core-icon>
+                    <core-icon icon="save" on-click="{{changeEmail}}"></core-icon>
                 </paper-input-decorator>
             </core-collapse>
         </div>
@@ -59,8 +68,11 @@
         <div class="profile" horizontal layout center>
             <span>Password</span>
             <span>
-                <paper-button raised on-click="{{}}">Change password</paper-button>
+                <paper-button raised on-click="{{createToken}}">Change password</paper-button>
             </span>
+            <core-collapse id="collapsePassword">
+                <p>Email with instructions has been sent to {{user.email}}</p>
+            </core-collapse>
         </div>
         
         <h2>Product</h2>
