@@ -23,6 +23,10 @@ core-toolbar paper-tabs{
   height: 100%;
 }
 
+core-toolbar paper-tab::shadow .tab-content {
+  margin: 0;
+}
+
 paper-tabs paper-tab::shadow #ink {
   color: #ff80ab;
 }
@@ -35,4 +39,5 @@ core-toolbar a {
 	text-decoration: none;
 	color: #FFF;
 	line-height: 64px;
+  padding: 0 12px;
 }
