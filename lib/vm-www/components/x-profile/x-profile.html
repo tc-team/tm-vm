@@ -2,22 +2,34 @@
     <template>
         <link rel="stylesheet" href="css/style.css">
 
-        <core-ajax id="ajaxProfile"
+        <core-ajax id="getProfile"
             auto
             url="http://localhost:3000/user"
             method="GET"
             handleAs="json"
             withCredentials="true"
-            on-core-response="{{handleResProffile}}">
+            on-core-response="{{handleResGetProf}}">
         </core-ajax>
 
-        <core-ajax id="ajaxDelUser"
+        <core-ajax id="setProfile"
+            auto="false"
+            url="http://localhost:3000/user"
+            method="PUT"
+            params = '{
+                "newEmail": "{{newName}}"
+            }'
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResSetProff}}">
+        </core-ajax>
+
+        <core-ajax id="deleteUser"
             auto="false"
             url="http://localhost:3000/user"
             method="DELETE"
             handleAs="json"
             withCredentials="true"
-            on-core-response="{{handleResponseDell}}">
+            on-core-response="{{handleResDelUser}}">
         </core-ajax>
         
         <core-toolbar>
@@ -33,12 +45,21 @@
         <div class="profile" horizontal layout center>
             <span>Email</span>
             <span>{{user.email}}</span>
-        </div horizontal layout center>
+
+            <core-icon icon="mode-edit" on-click="{{toggleEmail}}"></core-icon>
+            <core-collapse id="collapseEmail">
+                <h3>Email:</h3>
+                <paper-input-decorator floatingLabel label="{{user.email}}">
+                    <input id="email" is="core-input" type="email" value="{{newEmail}}" autofocus></input>
+                    <core-icon icon="save" on-click="changeEmail"></core-icon>
+                </paper-input-decorator>
+            </core-collapse>
+        </div>
 
         <div class="profile" horizontal layout center>
             <span>Password</span>
             <span>
-                <paper-button raised>Change password</paper-button>
+                <paper-button raised on-click="{{}}">Change password</paper-button>
             </span>
         </div>
         
