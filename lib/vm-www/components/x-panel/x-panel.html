@@ -11,7 +11,7 @@
 				<span class="ligthColoredContent">app</span>
 				<span flex></span>
 				<span class="ligthColoredContent">username</span>
-				<template if="{{sessionState}}">
+				<template if="{{sessionState}}" id="template">
 					<x-account-menu class="account-toolbar" logged="{{sessionState}}"></x-account-menu>
 					<paper-tabs id="navPanel" class="bottom fit" hidden  selected="{{activeTab}}" style="width: 348px;" horizontal center layout>
 						<paper-tab name="map"><a href="/#/target-maker">Target-maker</a></paper-tab>	

@@ -21,39 +21,11 @@
             </paper-dropdown>
         </paper-menu-button>
 
-<<<<<<< HEAD
-    <paper-menu-button>
-	    <paper-icon-button icon="account-box" noink></paper-icon-button>
-	    <paper-dropdown class="dropdown" halign="right">
-        <core-menu class="menu">
-        	<paper-item on-click="{{showProfile}}">Profile</paper-item>
-        	<paper-item on-click="{{showLogOutDialog}}">Log Out</paper-item>
-        </core-menu>
-	    </paper-dropdown>
-		</paper-menu-button>
-
-
-=======
->>>>>>> 9628e1876bd98d431f16fac4fd0a0912d2cc0c04
-    <paper-action-dialog id='logOut' backdrop autoCloseDisabled>
-        <p>Are you sure you want to Log Out?</p>
-        <paper-button dismissive>No</paper-button>
-        <paper-button on-click="{{executeLogOut}}" affirmative>Yes</paper-button>
-    </paper-action-dialog>
-
-    <!-- <core-overlay id="profile" backdrop autoCloseDisabled>
-         <core-ajax id="ajaxProfile"
-            auto="false"
-            url="http://localhost:3000/user"
-            method="GET"
-            handleAs="json"
-            withCredentials="true"
-            on-core-response="{{handleResProffile}}">
-        </core-ajax>
-        <x-profile user="{{user}}"></x-profile>
-        <paper-button core-overlay-toggle on-click="{{}}">cancel</paper-button>
-    </core-overlay>
-     -->
+        <paper-action-dialog id='logOut' backdrop autoCloseDisabled>
+            <p>Are you sure you want to Log Out?</p>
+            <paper-button dismissive>No</paper-button>
+            <paper-button on-click="{{executeLogOut}}" affirmative>Yes</paper-button>
+        </paper-action-dialog>
      
     </template>
 
