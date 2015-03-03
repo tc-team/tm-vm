@@ -1,0 +1,39 @@
+<polymer-element name="x-profile" attributes="user">
+    <template>
+        <link rel="stylesheet" href="css/style.css">
+
+        <core-ajax id="ajaxDelUser"
+            auto="false"
+            url="http://localhost:3000/user"
+            method="DELETE"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResponseDell}}">
+        </core-ajax>
+        
+        <core-toolbar>
+            Profile
+        </core-toolbar>
+        
+    
+        <div id="username" horizontal layout center>
+            <span>Username</span>
+            <span>{{user.username}}</span>
+        </div>
+
+        <div id="email" horizontal layout center>
+            <span>Email</span>
+            <span>{{user.email}}</span>
+        </div horizontal layout center>
+
+        <div id="password" horizontal layout center>
+            <span>Password</span>
+            <span>
+                <paper-button raised>Change password</paper-button>
+            </span>
+        </div>
+
+    </template>
+
+    <script src="js/script.js"></script>
+</polymer-element>

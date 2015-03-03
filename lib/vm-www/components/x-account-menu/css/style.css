@@ -14,3 +14,11 @@ paper-dropdown {
 	color: #03a9f4;
 	font-size: 18px;
 }
+core-overlay {
+	background-color: #fff;
+	color: #212121;
+}
+
+#profile {
+	font-size: 18px;
+}

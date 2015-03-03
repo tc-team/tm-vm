@@ -1,0 +1,39 @@
+:host {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 500px;
+	font-family: 'Roboto';
+}
+
+core-toolbar {
+	color: #fff;
+	font-size: 24px;
+	padding-left: 20px;
+	background-color: #512DA8;
+}
+
+div {
+	min-height: 70px;
+	padding-left: 20px;	
+	font-size: 18px;
+}
+
+span {
+	color: #727272;
+}
+
+span:first-of-type {
+	color: #212121;
+	display: inline-block;
+	width: 200px;
+}
+
+div span paper-button {
+	color: #727272;
+	display: inline-block;
+	line-height: 14px;
+	font-size: 14px;
+	height: 40px;
+	width: 100px;
+}
