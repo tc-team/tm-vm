@@ -8,4 +8,4 @@
 memos
 
 ### Logs ###
-*.log
+#*.log#
