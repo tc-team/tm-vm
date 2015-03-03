@@ -1,7 +1,7 @@
 'use strict';
 
 var Memo = {
-  add: function ( id, name, pathToFile, username, callback) {
+  add: function (id, name, pathToFile, username, callback) {
   	var result = 1;
     return callback(null, result);
   },
