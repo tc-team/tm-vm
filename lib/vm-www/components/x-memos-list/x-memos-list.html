@@ -1,4 +1,4 @@
-<polymer-element name="x-memos-list">
+<polymer-element name="x-memos-list" attributes="reloadList">
 	<template>
 		<link rel="stylesheet" href="css/style.css">
 
@@ -14,9 +14,8 @@
 
 		<div layout vertical center>
 			
-			
 			<template repeat="{{memo in memos}}">
-				<x-audio src="{{memo.pathToFile}}" name="{{memo.name}}"></x-audio>
+				<x-memo-item src="{{memo.pathToFile}}" name="{{memo.name}}" memoId="{{memo.id}}" reloadList="{{reloadList}}"></x-memo-item>
 			</template>
 
 		</div>

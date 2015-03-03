@@ -9,12 +9,8 @@
 
     <body unresolved>
         <template is="auto-binding">
-            <x-panel sessionState="{{isSession}}">
-            
+            <x-panel sessionState="{{isSession}}" selectedTab="{{selectedTab}}">
                 <x-user-session sessionState="{{isSession}}"></x-user-session>
-
-                <x-account-menu logged="{{isSession}}"></x-account-menu>
-
                 <app-router mode="hash">
 
                     <app-route path="/login" import="/components/x-login-register-page/x-login-register-page.html" bindRouter>
@@ -25,7 +21,7 @@
 
                     <app-route path="/target-maker|//" regex import="/components/x-target-maker-page/x-target-maker-page.html" bindRouter>
                     </app-route>
-
+                    
                     <app-route path="*" redirect="/"></app-route>
 
                 </app-router>

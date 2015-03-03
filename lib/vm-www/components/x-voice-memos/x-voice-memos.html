@@ -1,24 +1,27 @@
 <polymer-element name="x-voice-memos">
-  <template>
-    <link rel="stylesheet" href="css/style.css">
-      
-      <core-toolbar>
-        My memos
-      </core-toolbar>
+    <template>
+        <link rel="stylesheet" href="css/style.css">
 
-      <core-collapse id="collapse">
-        <x-audio src="{{audioRecord}}">
-        </x-audio>
+        <core-toolbar>
+            My memos
+        </core-toolbar>
 
-        <x-memo-recorder audioRecUrl="{{audioRecord}}" id="recorder" reload="{{reloadList}}">
-        </x-memo-recorder>
-      </core-collapse>
-      
-      <x-memos-list id="memosList"></x-memos-list>
 
-      <paper-fab icon="add" id="addMemosButton" on-click="{{handleCollapse}}"></paper-fab>
-  </template>
-  
-  <script src="js/script.js"></script>
+        <core-overlay id="recorderDialog" backdrop autoCloseDisabled>
+            <core-toolbar>
+                New voice memo
+            </core-toolbar>
+            
+            <x-memo-recorder reload="{{reloadList}}" id="recorder">
+            </x-memo-recorder>
+            
+            <paper-button core-overlay-toggle on-click="{{stopRecorder}}">cancel</paper-button>
+        </core-overlay>        
 
+        <x-memos-list id="memosList"></x-memos-list>
+
+        <paper-fab icon="add" id="addMemosButton" on-click="{{handleMemoDialog}}"></paper-fab>
+    </template>
+
+    <script src="js/script.js"></script>
 </polymer-element>

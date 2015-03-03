@@ -1,6 +1,6 @@
 :host {
 	display: block;
-  width: 800px;
+  	width: 800px;
 	margin: 20px auto;
 	background-color: #fff;
 	position: relative;
@@ -8,30 +8,33 @@
 core-toolbar {
 	background-color: #512DA8;
 	color: #fff;
+	padding-left: 20px;
 }
-paper-fab {
-	background-color: #FF4081;
-}
+
 paper-fab#addMemosButton {
 	position: absolute;
 	top: 36px;
-	right: 36px;
-}
-core-collapse {
-	border-bottom: 1px solid #B6B6B6;
-	position: relative;
-}
-core-collapse paper-fab {
-	margin: 0 20px;
-}
-core-collapse audio {
-	display: block;
-	width: 70%;
-	margin: 0 auto 20px auto;
+	right: 50px;
+	background-color: #FF4081;
 }
 
-x-memo-recorder {
-	position: absolute;
-	top: 14px;
-	right: 262px;
+paper-fab#addMemosButton:hover {
+	-ms-transform: rotate(180deg) scale(1.1,1.1); /* IE 9 */
+    -webkit-transform: rotate(180deg) scale(1.1,1.1); /* Chrome, Safari, Opera */
+    transform: rotate(180deg) scale(1.1,1.1);
+    transition: transform 0.2s;
+}
+
+#recorderDialog  {	
+	background-color: #fff;
+	width: 50%;
+}
+
+paper-button {
+	color: #FF4081;
+	float: right;
+}
+
+paper-button::shadow #ripple {
+  color: #FF4081;
 }

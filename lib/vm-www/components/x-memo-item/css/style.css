@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #B6B6B6;
+  box-sizing: border-box;
+}
+div {
+	width: 100%;
+	position: relative;
+}
+
+.more {
+	width: 40px;
+	height: 44px;
+	position: absolute;
+	top: -5px;
+	right: -15px;
+	color: #FF4081;
+}
+
+paper-dropdown {
+  	top: 40px;
+  	left: -69px;
+}
+
+.menu {
+	margin: 0;
+}
+
+paper-button [dismissive]{
+  	color: #FF4081;
+}
+
+paper-action-dialog paper-button::shadow #ripple {
+  	
+  	color: #FF4081;
+}
