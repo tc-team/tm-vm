@@ -1,0 +1,17 @@
+core-menu > paper-item {
+	transition: all 900ms ease-in-out;
+}
+
+paper-item paper-icon {
+	color: black;
+}
+paper-icon {
+	margin-right: 0.5em;
+} 
+paper-item {
+	color: #000;
+	background-color: white;
+}
+:host(.core-transition) #ripple,
+:host(.core-transition) #background{opacity:0;}
+:host(.core-transition) #scroller{opacity:0;}

@@ -1,4 +1,5 @@
 <polymer-element name="x-panel" attributes="sessionState selectedTab">
+<<<<<<< HEAD
     <template>
         <link rel="stylesheet" href="css/style.css">
     	<core-header-panel flex>
@@ -24,4 +25,30 @@
         </core-header-panel>
     </template>
     <script src="js/script.js"></script>
+=======
+	<template>
+		<link rel="stylesheet" type="text/css" href="x-panel.css">
+		<core-header-panel flex>
+			<core-toolbar id="coreToolbar">
+				<paper-icon-button id="toggle-button" 
+									icon="menu" 
+									aria-label="menu"
+									on-click="{{buttonClick}}">
+				</paper-icon-button>
+				<span class="ligthColoredContent">app</span>
+				<span flex></span>
+				<span class="ligthColoredContent">username</span>
+				<template if="{{sessionState}}">
+					<x-account-menu class="account-toolbar" logged="{{sessionState}}"></x-account-menu>
+					<paper-tabs id="navPanel" class="bottom fit" hidden  selected="{{activeTab}}" style="width: 348px;" horizontal center layout>
+						<paper-tab name="map"><a href="/#/target-maker">Target-maker</a></paper-tab>	
+						<paper-tab name="vm"><a href="/#/voice-memos">Voise-memos</a></paper-tab>
+					</paper-tabs>
+				</template>
+			</core-toolbar>
+			<content></content>
+		</core-header-panel>
+	</template>
+	<script src="x-panel.js"></script>
+>>>>>>> bd77084d724b41ba1412f401054f9671e3e9e91d
 </polymer-element>
