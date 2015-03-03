@@ -8,10 +8,11 @@
 									aria-label="menu"
 									on-click="{{buttonClick}}">
 				</paper-icon-button>
+				<paper-toast id="toast" text="Please login to select the application"></paper-toast>
 				<span class="ligthColoredContent">app</span>
 				<span flex></span>
-				<span class="ligthColoredContent">username</span>
 				<template if="{{sessionState}}" id="template">
+					<span class="ligthColoredContent">username</span>
 					<x-account-menu class="account-toolbar" logged="{{sessionState}}"></x-account-menu>
 					<paper-tabs id="navPanel" class="bottom fit" hidden  selected="{{activeTab}}" style="width: 348px;" horizontal center layout>
 						<paper-tab name="map"><a href="/#/target-maker">Target-maker</a></paper-tab>	

@@ -18,10 +18,27 @@ core-toolbar {
 	transition: height 0.3s;
 }
 
-core-toolbar paper-tabs {
+paper-tab {
 	box-shadow: none;
 }
+
 paper-tab a {
 	text-decoration: none;
 	color: currentcolor;
+
+	line-height: 20px;
+	font-size: 14px;
+	padding: 8px 10px 8px 28px;
+	text-transform: uppercase;
+}
+
+core-toolbar a {
+	text-decoration: none;
+	color: #FFF;
+	line-height: 64px;
+	padding: 0 12px;
+}
+
+core-toolbar paper-tab::shadow .tab-content {
+	margin: 0;
 }
