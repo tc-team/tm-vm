@@ -2,7 +2,7 @@
 node_modules
 
 ### Local bower components ###
-lib/vm-www/bower_components/
+###lib/vm-www/bower_components/###
 
 ### Voice-memos folder ###
 memos
