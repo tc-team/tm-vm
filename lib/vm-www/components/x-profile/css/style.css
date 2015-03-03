@@ -1,0 +1,42 @@
+:host {
+	display: block;
+	margin: 20px auto;
+	padding: 0 20px;
+	width: 800px;
+	font-family: 'Roboto';
+	background-color: #fff;
+}
+
+core-toolbar {
+	color: #fff;
+	font-size: 24px;
+	margin: 0 -20px;
+	padding-left: 20px;
+	background-color: #512DA8;
+}
+
+div.profile {
+	min-height: 70px;
+	padding-left: 20px;
+	font-size: 18px;
+	border-bottom: 1px solid #B6B6B6;
+}
+
+span {
+	color: #727272;
+}
+
+span:first-of-type {
+	color: #212121;
+	display: inline-block;
+	width: 400px;
+}
+
+div span paper-button {
+	color: #727272;
+	display: inline-block;
+	line-height: 14px;
+	font-size: 14px;
+	height: 40px;
+	width: 100px;
+}

@@ -1,0 +1,55 @@
+<polymer-element name="x-profile">
+    <template>
+        <link rel="stylesheet" href="css/style.css">
+
+        <core-ajax id="ajaxProfile"
+            auto
+            url="http://localhost:3000/user"
+            method="GET"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResProffile}}">
+        </core-ajax>
+
+        <core-ajax id="ajaxDelUser"
+            auto="false"
+            url="http://localhost:3000/user"
+            method="DELETE"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResponseDell}}">
+        </core-ajax>
+        
+        <core-toolbar>
+            Profile
+        </core-toolbar>
+        
+    
+        <div class="profile" horizontal layout center>
+            <span>Username</span>
+            <span>{{user.username}}</span>
+        </div>
+
+        <div class="profile" horizontal layout center>
+            <span>Email</span>
+            <span>{{user.email}}</span>
+        </div horizontal layout center>
+
+        <div class="profile" horizontal layout center>
+            <span>Password</span>
+            <span>
+                <paper-button raised>Change password</paper-button>
+            </span>
+        </div>
+        
+        <h2>Product</h2>
+        <div class="products">
+            <span>Memo</span>
+            <span>Number</span>
+        </div>
+
+
+    </template>
+
+    <script src="js/script.js"></script>
+</polymer-element>
