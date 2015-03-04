@@ -46,39 +46,48 @@
         </core-toolbar>
         
     
-        <div class="profile" horizontal layout center>
+        <div class="profile_info" horizontal layout center>
             <span>Username</span>
             <span>{{user.username}}</span>
         </div>
 
-        <div class="profile" horizontal layout center>
-            <span>Email</span>
-            <span>{{user.email}}</span>
+        <div class="profile_info" vertical layout>
+            <div horizontal layout center>
+                <span>Email</span>
+                <span>{{user.email}}</span>
 
-            <core-icon icon="mode-edit" on-click="{{toggleEmail}}"></core-icon>
+                <core-icon-button icon="create" on-click="{{toggleEmail}}"></core-icon-button>
+            </div>
+
             <core-collapse id="collapseEmail">
                 <h3>Email:</h3>
                 <paper-input-decorator floatingLabel label="{{user.email}}">
                     <input id="email" is="core-input" type="email" value="{{newEmail}}" autofocus></input>
-                    <core-icon icon="save" on-click="{{changeEmail}}"></core-icon>
+                    <core-icon-button icon="save" on-click="{{changeEmail}}"></core-icon-button>
                 </paper-input-decorator>
             </core-collapse>
         </div>
 
-        <div class="profile" horizontal layout center>
-            <span>Password</span>
-            <span>
-                <paper-button raised on-click="{{createToken}}">Change password</paper-button>
-            </span>
+        <div class="profile_info" vertical layout>
+            <div horizontal layout center>
+                <span>Password</span>
+                <span>
+                    <paper-button raised on-click="{{createToken}}">Change password</paper-button>
+                </span>
+            </div>
             <core-collapse id="collapsePassword">
                 <p>Email with instructions has been sent to {{user.email}}</p>
             </core-collapse>
         </div>
         
-        <h2>Product</h2>
-        <div class="products">
-            <span>Memo</span>
-            <span>Number</span>
+
+        <div class="profile_info" vertical layout>
+            <h2>Product</h2>
+            
+            <div horizontal layout center>
+                <span>Memo</span>
+                <span>Number</span>
+            </div>
         </div>
 
 

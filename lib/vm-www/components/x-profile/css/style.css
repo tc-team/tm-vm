@@ -15,11 +15,18 @@ core-toolbar {
 	background-color: #512DA8;
 }
 
-div.profile {
-	min-height: 70px;
+div.profile_info {
 	padding-left: 20px;
 	font-size: 18px;
 	border-bottom: 1px solid #B6B6B6;
+}
+
+div {
+	min-height: 70px;
+}
+
+core-icon-button {
+	color: ;
 }
 
 span {
