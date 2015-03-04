@@ -11,19 +11,6 @@
             on-core-response="{{handleResponseDell}}">
         </core-ajax>
 
-        <polymer-element name="x-account-dropdown" extends="core-icon-button" relative on-tap="{{toggle}}">
-            <script>
-                Polymer({
-                    toggle: function() {
-                        if (!this.dropdown) {
-                            this.dropdown = this.querySelector('core-dropdown');
-                        }
-                    this.dropdown && this.dropdown.toggle();
-                    }
-                });
-            </script>
-        </polymer-element>
-
         <x-account-dropdown icon="account-box">
             <core-dropdown halign="right">
                 <paper-item on-click="{{openProfile}}">
