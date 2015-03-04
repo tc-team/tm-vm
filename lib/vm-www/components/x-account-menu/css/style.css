@@ -22,3 +22,7 @@ core-overlay {
 #profile {
 	font-size: 18px;
 }
+
+paper-item, core-icon {
+  color: black;
+}

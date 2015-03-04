@@ -11,7 +11,33 @@
             on-core-response="{{handleResponseDell}}">
         </core-ajax>
 
-        <paper-menu-button>
+        <polymer-element name="x-trigger" extends="core-icon-button" relative on-tap="{{toggle}}">
+            <script>
+                Polymer({
+                    toggle: function() {
+                        if (!this.dropdown) {
+                            this.dropdown = this.querySelector('core-dropdown');
+                        }
+                    this.dropdown && this.dropdown.toggle();
+                    }
+                });
+            </script>
+        </polymer-element>
+
+        <x-trigger icon="account-box">
+            <core-dropdown halign="right">
+                <paper-item on-click="{{openProfile}}">
+                    <core-icon icon="social:person" aria-label="person"></core-icon>
+                    Profile
+                </paper-item>
+                <paper-item on-tap="{{showLogOutDialog}}">
+                    <core-icon icon="icons:settings-power" aria-label="exit"></core-icon>
+                    Log Out
+                </paper-item>
+            </core-dropdown>
+        </x-trigger>
+
+<!--         <paper-menu-button>
             <paper-icon-button icon="account-box" noink></paper-icon-button>
             <paper-dropdown class="dropdown" halign="right">
                 <core-menu class="menu">
@@ -19,7 +45,7 @@
                     <paper-item on-click="{{showLogOutDialog}}">Log Out</paper-item>
                 </core-menu>
             </paper-dropdown>
-        </paper-menu-button>
+        </paper-menu-button> -->
 
         <paper-action-dialog id='logOut' backdrop autoCloseDisabled>
             <p>Are you sure you want to Log Out?</p>
