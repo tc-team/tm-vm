@@ -14,9 +14,17 @@
 				<template if="{{sessionState}}" id="template">
 					<span class="ligthColoredContent">username</span>
 					<x-account-menu class="account-toolbar" logged="{{sessionState}}"></x-account-menu>
-					<paper-tabs id="navPanel" class="bottom fit" hidden  selected="{{activeTab}}" style="width: 348px;" horizontal center layout>
-						<paper-tab name="map"><a href="/#/target-maker">Target-maker</a></paper-tab>	
-						<paper-tab name="vm"><a href="/#/voice-memos">Voise-memos</a></paper-tab>
+					<paper-tabs id="navPanel" class="bottom fit" hidden selected="{{activeTab}}">
+						<paper-tab>
+							<a href="/#/target-maker"  horizontal center-center layout>
+								Target-maker
+							</a>
+						</paper-tab>
+						<paper-tab>
+							<a href="/#/voice-memos"  horizontal center-center layout>
+								Voise-memos
+							</a>
+						</paper-tab>
 					</paper-tabs>
 				</template>
 			</core-toolbar>
