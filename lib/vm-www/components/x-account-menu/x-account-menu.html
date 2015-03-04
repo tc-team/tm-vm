@@ -11,20 +11,7 @@
             on-core-response="{{handleResponseDell}}">
         </core-ajax>
 
-        <polymer-element name="x-trigger" extends="core-icon-button" relative on-tap="{{toggle}}">
-            <script>
-                Polymer({
-                    toggle: function() {
-                        if (!this.dropdown) {
-                            this.dropdown = this.querySelector('core-dropdown');
-                        }
-                    this.dropdown && this.dropdown.toggle();
-                    }
-                });
-            </script>
-        </polymer-element>
-
-        <x-trigger icon="account-box">
+        <x-account-dropdown icon="account-box">
             <core-dropdown halign="right">
                 <paper-item on-click="{{openProfile}}">
                     <core-icon icon="social:person" aria-label="person"></core-icon>
@@ -35,7 +22,7 @@
                     Log Out
                 </paper-item>
             </core-dropdown>
-        </x-trigger>
+        </x-account-dropdown>
 
 <!--         <paper-menu-button>
             <paper-icon-button icon="account-box" noink></paper-icon-button>
