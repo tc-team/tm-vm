@@ -12,7 +12,7 @@
 				<span class="ligthColoredContent">app</span>
 				<span flex></span>
 				<template if="{{sessionState}}" id="template">
-					<span class="ligthColoredContent">username</span>
+					<span class="ligthColoredContent">{{username}}</span>
 					<x-account-menu class="account-toolbar" logged="{{sessionState}}"></x-account-menu>
 					<paper-tabs id="navPanel" class="bottom fit" selected="{{activeTab}}">
 						<paper-tab>
