@@ -55,10 +55,12 @@
             <div horizontal layout center>
                 <span>Email</span>
                 <span>{{user.email}}</span>
-
-                <core-icon-button icon="create" on-click="{{toggleEmail}}"></core-icon-button>
+                <span flex></span>
+                <core-tooltip label="Change Email" position="top">
+                    <core-icon-button icon="create" on-click="{{toggleEmail}}"></core-icon-button>
+                </core-tooltip>
             </div>
-
+    
             <core-collapse id="collapseEmail">
                 <h3>Email:</h3>
                 <paper-input-decorator floatingLabel label="{{user.email}}">
