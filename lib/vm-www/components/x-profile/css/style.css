@@ -39,19 +39,24 @@ span:first-of-type {
 	width: 400px;
 }
 
-div span paper-button {
+paper-button {
 	color: #727272;
-	display: inline-block;
-	line-height: 14px;
 	font-size: 14px;
-	height: 40px;
 	width: 100px;
 }
 
 paper-input-decorator {
-	text-align: left;
-	width: 40%;
-	margin-left: 12px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+core-collapse {
+	padding-bottom: 25px;
+}
+
+core-collapse paper-button {
+	display: block;
+	margin: 0 auto;	
 }
 
 paper-input-decorator[focused] /deep/ .floated-label .label-text {
@@ -60,4 +65,18 @@ paper-input-decorator[focused] /deep/ .floated-label .label-text {
 
 paper-input-decorator /deep/ .focused-underline {
     background-color: #FF4081;
+}
+
+#changePassword{
+	display: none;
+}
+
+.passButtons {
+	margin: 20px 0;
+	min-height: 0 !important;
+}
+
+.passButtons paper-button {
+	width: auto;
+	height: auto;
 }

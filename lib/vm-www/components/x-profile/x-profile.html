@@ -1,4 +1,4 @@
-<polymer-element name="x-profile">
+<polymer-element name="x-profile" attributes="token">
     <template>
         <link rel="stylesheet" href="css/style.css">
 
@@ -27,9 +27,33 @@
             auto="false"
             url="http://localhost:3000/token"
             method="POST"
+            params = '{
+                "email": "{{user.email}}"
+            }'
             handleAs="json"
             withCredentials="true"
             on-core-response="{{handleResCreateTok}}">
+        </core-ajax>
+
+        <core-ajax id="checkToken"
+            auto="false"
+            url="http://localhost:3000/token/{{token}}"
+            method="GET"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResCheckTok}}">
+        </core-ajax>
+
+        <core-ajax id="setPass"
+            auto="false"
+            url="http://localhost:3000/user"
+            method="PUT"
+            params = '{
+                "newPassword": "{{password}}"
+            }'
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResSetPass}}">
         </core-ajax>
 
         <core-ajax id="deleteUser"
@@ -57,16 +81,18 @@
                 <span>{{user.email}}</span>
                 <span flex></span>
                 <core-tooltip label="Change Email" position="top">
-                    <core-icon-button icon="create" on-click="{{toggleEmail}}"></core-icon-button>
+                    <paper-fab mini icon="create" on-click="{{toggleEmail}}"></paper-fab>
                 </core-tooltip>
+                <paper-toast text="Email was changed" id="changedEmailToast"></paper-toast>
             </div>
     
             <core-collapse id="collapseEmail">
-                <h3>Email:</h3>
-                <paper-input-decorator floatingLabel label="{{user.email}}">
-                    <input id="email" is="core-input" type="email" value="{{newEmail}}" autofocus></input>
-                    <core-icon-button icon="save" on-click="{{changeEmail}}"></core-icon-button>
+                <paper-input-decorator floatingLabel label="New Email" autoValidate>
+                    <input id="email" is="core-input" type="email" value="{{newEmail}}"></input>
                 </paper-input-decorator>
+                <paper-button raised  on-click="{{changeEmail}}">
+                    <core-icon icon="save"></core-icon>Save
+                </paper-button>
             </core-collapse>
         </div>
 
@@ -74,12 +100,29 @@
             <div horizontal layout center>
                 <span>Password</span>
                 <span>
-                    <paper-button raised on-click="{{createToken}}">Change password</paper-button>
+                    <paper-button id="changePassButt" raised on-click="{{createToken}}">Change password</paper-button>
                 </span>
             </div>
-            <core-collapse id="collapsePassword">
-                <p>Email with instructions has been sent to {{user.email}}</p>
-            </core-collapse>
+            
+            <div id="changePassword">
+                <paper-input-decorator floatingLabel  label="Password" error="Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.pinput.validity.valid}}">
+                    <input id="pinput" pattern="[a-zA-Z0-9_-]*" is="core-input" type="password" value="{{password}}"></input>
+                </paper-input-decorator>
+
+                <paper-input-decorator id="confirm" floatingLabel  label="Confirm Your password" error="Your password and confirmation password do not match.">
+                    <input id="pcinput" type="password" is="core-input" value="{{confirmPassword}}" on-change="{{handleConfirm}}"></input>
+                </paper-input-decorator>
+                <div class="passButtons" horizontal center-justified layout>
+                    <paper-button id="cancelChangePassButt" raised on-click="{{cancelPassChange}}">Cancel</paper-button>
+
+                    <paper-button id="savePassButt" raised on-click="{{saveNewPass}}">Save Password</paper-button>
+                </div>
+            </div>
+            
+            <paper-toast text="Email with instructions has been sent to {{user.email}}" id="sendMailToast"></paper-toast>
+
+            <paper-toast text="Password was changed" id="savePassToast"></paper-toast>
+
         </div>
         
 
