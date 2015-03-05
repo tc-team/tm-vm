@@ -19,6 +19,13 @@
 -- Table structure for table `base_plan`
 --
 
+DROP DATABASE IF EXISTS `tm-vm`;
+
+CREATE DATABASE `tm-vm`;
+
+USE `tm-vm`;
+
+
 DROP TABLE IF EXISTS `base_plan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
