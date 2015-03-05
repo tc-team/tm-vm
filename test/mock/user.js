@@ -15,22 +15,14 @@ var User = {
     }];
     return callback(null, result);
   },
-  set: function (username, newPassword, newEmail, callback) {
-    var result = {
-      fieldCount: 0,
-      affectedRows: 1,
-      insertId: 0,
-      serverStatus: 2,
-      warningCount: 0,
-      message: '(Rows matched: 1  Changed: 1  Warnings: 0',
-      protocol41: true,
-      changedRows: 1
-    };
-    return callback(null, result);
+  setPass: function (username, newPassword, callback) {
+    return callback(null, 1);
+  },
+  setEmail: function (username, newEmail, callback) {
+    return callback(null, 1);
   },
   delete: function (username, callback) {
-    var result = 1;
-    return callback(null, result);
+    return callback(null, 1);
   }
 };
 

@@ -4,7 +4,7 @@ var should = require('chai').should();
 
 var Memo = require('../../../lib/vm-api/services/Memo');
 
-describe('MemoService#getMemos()', function() {
+describe('#getMemos()', function() {
   it('should get all memos', function(done) {
     Memo.getMemos('TestUser', function (error, result) {
   	  should.not.exist(error);
