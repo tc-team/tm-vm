@@ -42,7 +42,6 @@ span:first-of-type {
 paper-button {
 	color: #727272;
 	font-size: 14px;
-	width: 100px;
 }
 
 paper-input-decorator {
@@ -57,6 +56,10 @@ core-collapse {
 core-collapse paper-button {
 	display: block;
 	margin: 0 auto;	
+}
+
+#collapseEmail paper-button{
+	width: 100px;
 }
 
 paper-input-decorator[focused] /deep/ .floated-label .label-text {
@@ -79,4 +82,45 @@ paper-input-decorator /deep/ .focused-underline {
 .passButtons paper-button {
 	width: auto;
 	height: auto;
+}
+
+#delAccountBut {
+	width: auto;
+	margin: 20px 0;
+}
+
+#collapsePayment {	
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#collapsePayment core-icon {
+	display: block;
+	height: 40px;
+	width: 100px;
+	margin: 0 auto;
+}
+
+#collapsePayment core-icon:hover {
+	cursor: pointer;
+}
+
+#collapsePayment core-icon div{
+	background-size: contain;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	min-height: 0;
+}
+
+.paymentCard {	
+	border: 1px dashed #727272;
+	padding: 15px;
+}
+
+.paymentCard span {
+	display: inline;
+}
+
+.paymentCard paper-input-decorator {
+	display: inline;
 }

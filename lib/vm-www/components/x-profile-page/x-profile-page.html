@@ -1,7 +1,7 @@
-<polymer-element name="x-profile-page" attributes="tokenValue">
+<polymer-element name="x-profile-page" attributes="tokenValue sessionState">
 	<template>
 		<div>
-			<x-profile token="{{tokenValue}}"></x-profile>
+			<x-profile token="{{tokenValue}}" logged="{{sessionState}}"></x-profile>
 		</div>
 	</template>
 	<script src="js/srcipt.js"></script>

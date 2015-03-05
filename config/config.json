@@ -30,7 +30,7 @@
   	"password": "root",
   	"database": "tm-vm"
   },
-  "<p></p>aypal": {
+  "paypal": {
     "host": "api.sandbox.paypal.com",           
     "client_id": "AYW5HBCAo0JeWg50Lo3b9u0DX9QH9rcvc07oOS_UJjcvedIlSZTjSgpC3J4H",
     "client_secret": "EMHKJBAhRUgiR5y0RlPC-cv_ZixVCXGPMayt9C6683_8q1kp-qeE7h05Hb8p"

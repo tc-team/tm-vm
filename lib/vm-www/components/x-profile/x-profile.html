@@ -1,4 +1,4 @@
-<polymer-element name="x-profile" attributes="token">
+<polymer-element name="x-profile" attributes="token logged">
     <template>
         <link rel="stylesheet" href="css/style.css">
 
@@ -9,6 +9,15 @@
             handleAs="json"
             withCredentials="true"
             on-core-response="{{handleResGetProff}}">
+        </core-ajax>
+
+        <core-ajax id="getMemo"
+            auto
+            url="http://localhost:3000/product/memo"
+            method="GET"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResGetMemo}}">
         </core-ajax>
 
         <core-ajax id="setEmail"
@@ -63,6 +72,19 @@
             handleAs="json"
             withCredentials="true"
             on-core-response="{{handleResDelUser}}">
+        </core-ajax>
+
+        <core-ajax id="createPaymentAjax"
+            auto="false"
+            url="http://localhost:3000/payment"
+            method="POST"
+            params = '{
+                "name": "memo",
+                "number": "{{memoCount}}"
+            }'
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResCreatePay}}">
         </core-ajax>
         
         <core-toolbar>
@@ -127,13 +149,44 @@
         
 
         <div class="profile_info" vertical layout>
-            <h2>Product</h2>
-            
             <div horizontal layout center>
                 <span>Memo</span>
-                <span>Number</span>
+                <span>Number: {{memoNumber}}</span>
+                <span flex></span>
+                <span> Price: 0.5 $</span>
+                <span flex></span>
+
+                <core-tooltip label="Buy extra space for memos" position="top">
+                    <core-icon-button icon="expand-more" on-click="{{togglePayment}}"></core-icon-button>
+                </core-tooltip>
             </div>
+
+            <core-collapse id="collapsePayment">
+                <div class="paymentCard">
+                    <span>Number:</span>
+                    <paper-input-decorator label="Your Name">
+                        <input is="core-input" type="number" value="{{memoCount}}"></input>
+                    </paper-input-decorator>
+
+                    <span>Total:</span>
+                    <span>$ {{memoCount*0.5}}</span>
+
+                    <core-icon src="img/x-but-paypal.gif" on-click="{{createPayment}}"></core-icon>
+                </div>
+            </core-collapse>
         </div>
+
+        <div vertical layout center>
+            <paper-button raised  on-click="{{deleteAccount}}" id="delAccountBut">
+                <core-icon icon="delete"></core-icon>Delete account
+            </paper-button>
+        </div>
+
+        <paper-action-dialog id='delDialog' backdrop autoCloseDisabled>
+            <p>Are you sure you want to delete account?</p>
+            <paper-button dismissive>No</paper-button>
+            <paper-button on-click="{{executeDelete}}" affirmative>Yes</paper-button>
+        </paper-action-dialog>
 
 
     </template>
