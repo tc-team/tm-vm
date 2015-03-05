@@ -20,6 +20,15 @@
             on-core-response="{{handleResGetMemo}}">
         </core-ajax>
 
+        <core-ajax id="getMemoPrice"
+            auto
+            url="http://localhost:3000/product/memo/price"
+            method="GET"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResGetMemoPrice}}">
+        </core-ajax>
+
         <core-ajax id="setEmail"
             auto="false"
             url="http://localhost:3000/user"
@@ -153,7 +162,7 @@
                 <span>Memo</span>
                 <span>Number: {{memoNumber}}</span>
                 <span flex></span>
-                <span> Price: 0.5 $</span>
+                <span> Price: $ {{memoPrice}}</span>
                 <span flex></span>
 
                 <core-tooltip label="Buy extra space for memos" position="top">
