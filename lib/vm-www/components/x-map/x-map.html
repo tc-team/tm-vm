@@ -1,6 +1,15 @@
 <link rel="import" href="../../bower_components/google-apis/google-maps-api.html">
 <polymer-element name='x-map' attributes='marks' extends='google-map'>
 		<template>
+			<core-ajax id="getMarks"
+	            auto
+	            url="http://localhost:3000/target"
+	            method="GET"
+	            handleAs="json"
+	            withCredentials="true"
+	            on-core-response="{{handleResGetMap}}">
+	        </core-ajax>
+	        
 			<shadow></shadow>
         </template> 
 	<script src="js/x-map.js"></script>
