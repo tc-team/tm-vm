@@ -13,7 +13,7 @@
 				<span flex></span>
 				<template if="{{sessionState}}" id="template">
 					<span class="ligthColoredContent">{{username}}</span>
-					<x-account-menu class="account-toolbar" logged="{{sessionState}}"></x-account-menu>
+					<x-account-menu class="account-toolbar" logged="{{sessionState}}" sessionService="http://localhost:3000/session"></x-account-menu>
 					<paper-tabs id="navPanel" class="bottom fit" selected="{{activeTab}}">
 						<paper-tab>
 							<a href="/#/target-maker"  horizontal center-center layout>
