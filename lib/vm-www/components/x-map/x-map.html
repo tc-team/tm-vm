@@ -18,11 +18,10 @@
 	            handleAs="json"
 	            params = '{
 			      "tile": "{{name}}",
-			      "longtitude": "{{password}}",
-			      "latitude": "",
-			      "description": "",
-			      "status": "",
-			      
+			      "longtitude": "{{lng}}",
+			      "latitude": "{{lat}}",
+			      "description": "test",
+			      "status": "test"
 			    }'
 	            withCredentials="true"
 	            on-core-response="{{handleResSaveMark}}">
