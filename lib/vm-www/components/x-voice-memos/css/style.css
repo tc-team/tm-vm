@@ -1,12 +1,11 @@
 :host {
 	display: block;
   	width: 800px;
-	margin: 20px auto;
 	background-color: #fff;
 	position: relative;
 }
 core-toolbar {
-	background-color: #512DA8;
+	background-color: #3F51B5;
 	color: #fff;
 	padding-left: 20px;
 }

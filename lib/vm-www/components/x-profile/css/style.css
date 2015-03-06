@@ -1,6 +1,5 @@
 :host {
 	display: block;
-	margin: 20px auto;
 	padding: 0 20px;
 	width: 800px;
 	font-family: 'Roboto';
@@ -12,7 +11,18 @@ core-toolbar {
 	font-size: 24px;
 	margin: 0 -20px;
 	padding-left: 20px;
-	background-color: #512DA8;
+	background-color: #3F51B5;
+}
+
+paper-fab {
+	background-color: #FF4081;	
+}
+
+paper-fab:hover {
+	-ms-transform: rotate(360deg) scale(1.1,1.1); /* IE 9 */
+    -webkit-transform: rotate(360deg) scale(1.1,1.1); /* Chrome, Safari, Opera */
+    transform: rotate(360deg) scale(1.1,1.1);
+    transition: transform 0.5s;
 }
 
 div.profile_info {
@@ -33,7 +43,7 @@ span {
 	color: #727272;
 }
 
-span:first-of-type {
+span:first-child {
 	color: #212121;
 	display: inline-block;
 	width: 400px;
@@ -115,12 +125,39 @@ paper-input-decorator /deep/ .focused-underline {
 .paymentCard {	
 	border: 1px dashed #727272;
 	padding: 15px;
+	color: #212121;
 }
 
 .paymentCard span {
 	display: inline;
+	color: #212121;	
 }
 
 .paymentCard paper-input-decorator {
 	display: inline;
+}
+
+core-overlay {
+  background-color: #fff;
+  max-width: 450px;
+  color: #212121;
+}
+
+core-overlay div {
+	min-height: 0;
+}
+
+core-overlay p {
+  margin: 20px;
+  color: #212121;
+  line-height: 2em;
+  text-align: center;
+}
+core-overlay paper-button {
+  color: #FF4081;
+  margin-bottom: 5px;
+}
+
+paper-button::shadow #ripple {
+    color: #FF4081;
 }

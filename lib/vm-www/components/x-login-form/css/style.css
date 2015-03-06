@@ -29,6 +29,7 @@ paper-input-decorator[focused] /deep/ .floated-label .label-text {
 paper-input-decorator /deep/ .focused-underline {
     background-color: #FF4081;
 }
+
 #error {
 	font: italic 14px serif;
 	color: #FF4081;	

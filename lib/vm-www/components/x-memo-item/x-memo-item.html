@@ -2,13 +2,13 @@
 	<template>
 		<link rel="stylesheet" href="css/style.css">
 
-		<core-ajax id="ajaxDelMemo"
+		<core-ajax id="ajaxDeleteMemo"
 			auto="false"
 			url="http://localhost:3000/memo/{{memoId}}"
 			method="DELETE"
 			handleAs="json"
 			withCredentials="true"
-			on-core-response="{{handleResponseDell}}">
+			on-core-response="{{handleResDelete}}">
 		</core-ajax>
 
 
@@ -21,7 +21,7 @@
 	      	}'
 			handleAs="json"
 			withCredentials="true"
-			on-core-response="{{handleResponseEdit}}">
+			on-core-response="{{handleResEdit}}">
 		</core-ajax>
 
 
@@ -29,38 +29,42 @@
 			<x-audio src="{{src}}" name="{{name}}"></x-audio>
 			
 			<div class="more">
-				<paper-menu-button>
-				    <paper-icon-button icon="more-vert"></paper-icon-button>
-				    <paper-dropdown class="dropdown" halign="right">
-				        <core-menu class="menu">
-				        	<paper-item on-click="{{deleteMemo}}">
-				        		<core-icon icon="delete"></core-icon>
-				        		Delete
-				        	</paper-item>
-				        	<paper-item on-click="{{editMemo}}">
-								<core-icon icon="create"></core-icon>
-								Edit
-				        	</paper-item>
-				        </core-menu>
-				    </paper-dropdown>
-				</paper-menu-button>
+				<x-trigger-dropdown icon="more-vert">
+		            <core-dropdown halign="right">
+		                <paper-item on-click="{{deleteMemo}}">
+		                    <core-icon icon="delete"></core-icon>
+		                    Delete
+		                </paper-item>
+		                <paper-item on-click="{{editMemo}}">
+		                    <core-icon icon="create"></core-icon>
+		                    Edit
+		                </paper-item>
+		            </core-dropdown>
+		        </x-trigger-dropdown>
 			</div>
 		</div>
 
-		<paper-action-dialog id='deleteDialog' backdrop autoCloseDisabled>
-	      	<p>Are you sure you want to delete memo "{{name}}"?</p>
-			<paper-button dismissive>No</paper-button>
-	      	<paper-button on-click="{{executeDelete}}" affirmative>Yes</paper-button>
-	    </paper-action-dialog>
 
-	    <paper-action-dialog id='editDialog' backdrop autoCloseDisabled>
-	      	<p>Edit memo name: </p>
-	      	<paper-input-decorator floatingLabel label="{{name}}">
-                <input id="nameInput" is="core-input" type="text" value="{{newName}}" autofocus></input>
-            </paper-input-decorator>
-			<paper-button dismissive>No</paper-button>
-	      	<paper-button on-click="{{executeEdit}}" affirmative>Yes</paper-button>
-	    </paper-action-dialog>
+		<core-overlay id='deleteDialog' backdrop autoCloseDisabled>
+	      	<p>Are you sure you want to delete memo <br> "{{name}}"?</p>
+	      	<div horizontal center-justified layout>
+				<paper-button core-overlay-toggle>No</paper-button>
+		      	<paper-button on-click="{{executeDelete}}" core-overlay-toggle>Yes</paper-button>
+	      	</div>
+	    </core-overlay>
+
+	    <core-overlay id='editDialog' backdrop autoCloseDisabled>
+	      	<p>
+	      		<span>Edit memo name: </span>
+	      		<paper-input-decorator floatingLabel label="{{name}}">
+                	<input id="nameInput" is="core-input" type="text" value="{{newName}}" autofocus></input>
+            	</paper-input-decorator>
+            </p>
+            <div horizontal center-justified layout>
+				<paper-button core-overlay-toggle>Cancel</paper-button>
+	      		<paper-button on-click="{{executeEdit}}" core-overlay-toggle>Save</paper-button>
+      		</div>
+	    </core-overlay>
 	</template>
 
 	<script src="js/script.js"></script>

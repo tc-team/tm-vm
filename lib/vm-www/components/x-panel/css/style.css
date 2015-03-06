@@ -1,30 +1,47 @@
-core-header-panel {
-  height: 100%;
-  overflow: auto;
+:host, core-header-panel {
+	height: 100%; 
+}
+
+.ligthColoredContent {
+	color: #C5CAE9;
+}
+
+paper-tabs, core-toolbar {
+	background-color: #3F51B5;
+	color: #fff;
+	box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+#navPanel {
+	visibility: hidden;
+}
+
+paper-tabs {
+	box-shadow: none;
+	width: 400px !important;
 }
 
 core-toolbar {
-  background: #673AB7;
-  color: white;
+	height: 60px;
+	transition: height 0.3s;
 }
 
-core-toolbar core-icon {
-  height: 40px !important;
-  width: 40px !important;
+core-toolbar.medium-tall {
+	height: 105px;
 }
 
-core-toolbar span.title {
-  font-size: 1.1em;
-  margin-right: 50px;
+paper-tab a {
+	text-transform: uppercase;
 }
 
-core-toolbar paper-tabs{
-  font-size: 0.8em;
-  height: 100%;
+core-toolbar a {
+	text-decoration: none;
+	color: inherit;
+	padding: 0 12px;
 }
 
 core-toolbar paper-tab::shadow .tab-content {
-  margin: 0;
+	margin: 0;
 }
 
 paper-tabs paper-tab::shadow #ink {
@@ -33,11 +50,4 @@ paper-tabs paper-tab::shadow #ink {
 
 paper-tabs::shadow #selectionBar {
   background-color: #FF4081;
-}
-
-core-toolbar a {
-	text-decoration: none;
-	color: #FFF;
-	line-height: 64px;
-  padding: 12 12px;
 }

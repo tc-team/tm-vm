@@ -13,11 +13,9 @@
 		</core-ajax>
 
 		<div layout vertical center>
-			
 			<template repeat="{{memo in memos}}">
 				<x-memo-item src="{{memo.pathToFile}}" name="{{memo.name}}" memoId="{{memo.id}}" reloadList="{{reloadList}}"></x-memo-item>
 			</template>
-
 		</div>
 	</template>
 

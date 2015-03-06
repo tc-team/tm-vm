@@ -22,7 +22,7 @@
     <paper-input-decorator floatingLabel  label="Username" error="Value must start with a letter! Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.uinput.validity.valid}}">
       <input id="uinput" pattern="^[a-zA-Z ]+[a-zA-Z0-9_-]*" is="core-input" type="text" value="{{username}}"></input>
     </paper-input-decorator>
-    <paper-input-decorator floatingLabel  label="Email">
+    <paper-input-decorator floatingLabel  label="Email" autoValidate>
       <input id="einput" is="core-input" type="email" value="{{email}}"></input>
     </paper-input-decorator>
     <paper-input-decorator floatingLabel  label="Password" error="Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.pinput.validity.valid}}">
