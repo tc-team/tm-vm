@@ -156,6 +156,36 @@ INSERT INTO `profile` VALUES ('Pasha','81dc9bdb52d04dc20036dbd8313ed055','pavlov
 UNLOCK TABLES;
 
 --
+-- Table structure for table `target`
+--
+
+DROP TABLE IF EXISTS `target`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `target` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(20) NOT NULL,
+  `longtitude` decimal(11,8) NOT NULL,
+  `latitude` decimal(10,8) NOT NULL,
+  `description` varchar(50) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `username` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`),
+  CONSTRAINT `target_ibfk_1` FOREIGN KEY (`username`) REFERENCES `profile` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `target`
+--
+
+LOCK TABLES `target` WRITE;
+/*!40000 ALTER TABLE `target` DISABLE KEYS */;
+/*!40000 ALTER TABLE `target` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `token`
 --
 
