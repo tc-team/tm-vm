@@ -1,6 +1,22 @@
 <polymer-element name="x-target-maker-page">
 	<template>
-		<x-map></x-map>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
+		
+		<x-map on-google-map-ready="{{xMapReady}}"
+			   latitude="{{localLat}}"
+			   longitude="{{localLong}}"
+			   zoom="{{zoom}}"
+			   marks="{{marks}}"
+			   disableDefaultUI>
+
+			   	<template repeat="{{marker in marks}}">
+					<google-map-marker latitude="{{marker.latitude}}" longitude="{{marker.longitude}}" title="{{marker.name}}"></google-map-marker>
+				</template>
+		</x-map>
+
+		<paper-slider min="0" max="21" value="{{zoom}}" pin></paper-slider>
 	</template>
 	<script src="js/srcipt.js"></script>
 </polymer-element>
