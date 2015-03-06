@@ -25,14 +25,11 @@
 		</x-map>
 
 		<x-card id="core_card" layout vertical>
-			<div horizontal layout>
 				<template repeat="{{marker in marks}}">
 					{{marker.name}}<br>
 					{{marker.latitude}}<br>
 					{{marker.longitude}}"<br><br>
 				</template>
-			</div>
-			<paper-button on-click="{{someFunc}}">test</paper-button>
 		</x-card>
 		</template>
 
