@@ -2,21 +2,40 @@
 	<template>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
+		<template is="auto-binding">
 		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
 		
 		<x-map on-google-map-ready="{{xMapReady}}"
 			   latitude="{{localLat}}"
 			   longitude="{{localLong}}"
-			   zoom="{{zoom}}"
 			   marks="{{marks}}"
 			   disableDefaultUI>
 
-			   	<template repeat="{{marker in marks}}">
-					<google-map-marker latitude="{{marker.latitude}}" longitude="{{marker.longitude}}" title="{{marker.name}}"></google-map-marker>
+				<template repeat="{{marker in marks}}">
+					<google-map-marker latitude="{{marker.latitude}}"
+										longitude="{{marker.longitude}}"
+										title="{{marker.name}}"
+										draggable="true">
+						<!-- <b>title</b><br>
+						<p>Lat: "{{marker.latitude}}"<br>
+						   Lng: "{{marker.longitude}}"
+						</p> -->
+					</google-map-marker>
 				</template>
 		</x-map>
 
-		<paper-slider min="0" max="21" value="{{zoom}}" pin></paper-slider>
+		<x-card id="core_card" layout vertical>
+			<div horizontal layout>
+				<template repeat="{{marker in marks}}">
+					{{marker.name}}<br>
+					{{marker.latitude}}<br>
+					{{marker.longitude}}"<br><br>
+				</template>
+			</div>
+			<paper-button on-click="{{someFunc}}">test</paper-button>
+		</x-card>
+		</template>
+
 	</template>
 	<script src="js/srcipt.js"></script>
 </polymer-element>
