@@ -9,7 +9,24 @@
 	            withCredentials="true"
 	            on-core-response="{{handleResGetMap}}">
 	        </core-ajax>
-	        
+
+	        <core-ajax id="saveMark"
+	            auto = "false"
+	            url="http://localhost:3000/target"
+	            method="POST"
+	            handleAs="json"
+	            params = '{
+			      "tile": "{{name}}",
+			      "longtitude": "{{password}}",
+			      "latitude": "",
+			      "description": "",
+			      "status": "",
+			      
+			    }'
+	            withCredentials="true"
+	            on-core-response="{{handleResSaveMark}}">
+	        </core-ajax>
+
 			<shadow></shadow>
         </template> 
 	<script src="js/x-map.js"></script>
