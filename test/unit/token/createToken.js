@@ -2,10 +2,11 @@
 
 var should = require('chai').should();
 
-var Token = require('../../../lib/vm-api/services/Token');
+var tokenService = '../../../lib/vm-api/services/Token';
 
 describe('#createToken()', function() {
   it('should create token', function() {
+  	var Token = require(tokenService);
     return Token.createToken('TestUser', 'test.tkachuk@gmail.com').should.be.fulfilled;
   });
 });

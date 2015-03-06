@@ -112,7 +112,7 @@
                 <span>{{user.email}}</span>
                 <span flex></span>
                 <core-tooltip label="Change Email" position="top">
-                    <paper-fab mini icon="create" on-click="{{toggleEmail}}"></paper-fab>
+                    <paper-fab id="changeEmailIcon" mini icon="create" on-click="{{toggleEmail}}"></paper-fab>
                 </core-tooltip>
                 <paper-toast text="Email was changed" id="changedEmailToast"></paper-toast>
             </div>
@@ -166,7 +166,7 @@
                 <span flex></span>
 
                 <core-tooltip label="Buy extra space for memos" position="top">
-                    <core-icon-button icon="expand-more" on-click="{{togglePayment}}"></core-icon-button>
+                    <paper-fab id="changeBallanceIcon" mini icon="expand-more" on-click="{{togglePayment}}"></paper-fab>
                 </core-tooltip>
             </div>
 
@@ -191,11 +191,13 @@
             </paper-button>
         </div>
 
-        <paper-action-dialog id='delDialog' backdrop autoCloseDisabled>
+        <core-overlay id='delDialog' backdrop autoCloseDisabled>
             <p>Are you sure you want to delete account?</p>
-            <paper-button dismissive>No</paper-button>
-            <paper-button on-click="{{executeDelete}}" affirmative>Yes</paper-button>
-        </paper-action-dialog>
+            <div horizontal center-justified layout>
+                <paper-button core-overlay-toggle>No</paper-button>
+                <paper-button on-click="{{executeDelete}}" core-overlay-toggle>Yes</paper-button>
+            </div>
+        </core-overlay>
 
 
     </template>

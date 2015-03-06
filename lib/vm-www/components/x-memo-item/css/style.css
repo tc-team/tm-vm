@@ -4,7 +4,9 @@
   padding: 20px;
   border-bottom: 1px solid #B6B6B6;
   box-sizing: border-box;
+  font-family: inherit;
 }
+
 div {
 	width: 100%;
 	position: relative;
@@ -19,20 +21,34 @@ div {
 	color: #FF4081;
 }
 
-paper-dropdown {
-  	top: 40px;
-  	left: -69px;
+core-overlay {
+  background-color: #fff;
+  max-width: 450px;
 }
 
-.menu {
-	margin: 0;
+core-overlay p {
+  margin: 20px;
+  color: #212121;
 }
 
-paper-button [dismissive]{
-  	color: #FF4081;
+core-overlay#deleteDialog p {
+  line-height: 2em;
+  text-align: center;
 }
 
-paper-action-dialog paper-button::shadow #ripple {
-  	
-  	color: #FF4081;
+core-overlay paper-button {
+  color: #FF4081;
+  margin-bottom: 5px;
+}
+
+paper-button::shadow #ripple {
+	color: #FF4081;
+}
+
+paper-input-decorator[focused] /deep/ .floated-label .label-text {
+  color: #FF4081;
+}
+
+paper-input-decorator /deep/ .focused-underline {
+  background-color: #FF4081;
 }

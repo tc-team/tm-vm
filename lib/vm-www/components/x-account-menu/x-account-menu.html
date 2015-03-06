@@ -11,7 +11,7 @@
             on-core-response="{{handleResponseDell}}">
         </core-ajax>
 
-        <x-account-dropdown icon="account-box">
+        <x-trigger-dropdown icon="account-box">
             <core-dropdown halign="right">
                 <paper-item on-click="{{openProfile}}">
                     <core-icon icon="social:person" aria-label="person"></core-icon>
@@ -22,23 +22,15 @@
                     Log Out
                 </paper-item>
             </core-dropdown>
-        </x-account-dropdown>
-
-<!--         <paper-menu-button>
-            <paper-icon-button icon="account-box" noink></paper-icon-button>
-            <paper-dropdown class="dropdown" halign="right">
-                <core-menu class="menu">
-                    <paper-item on-click="{{openProfile}}">Profile</paper-item>
-                    <paper-item on-click="{{showLogOutDialog}}">Log Out</paper-item>
-                </core-menu>
-            </paper-dropdown>
-        </paper-menu-button> -->
-
-        <paper-action-dialog id='logOut' backdrop autoCloseDisabled>
-            <p>Are you sure you want to Log Out?</p>
-            <paper-button dismissive>No</paper-button>
-            <paper-button on-click="{{executeLogOut}}" affirmative>Yes</paper-button>
-        </paper-action-dialog>
+        </x-trigger-dropdown>
+        
+        <core-overlay id='logOut' backdrop autoCloseDisabled>
+            <p>Are you sure you want to <br> Log Out?</p>
+            <div horizontal center-justified layout>
+                <paper-button core-overlay-toggle>No</paper-button>
+                <paper-button on-click="{{executeLogOut}}" core-overlay-toggle>Yes</paper-button>
+            </div>
+        </core-overlay>
      
     </template>
 

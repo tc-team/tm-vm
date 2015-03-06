@@ -30,11 +30,6 @@ var Token = {
   		var result = 1;
       resolve(result);
     });
-  },
-  sendMail: function (mailOptions) {
-    return new Promise(function (resolve) {
-      resolve(mailOptions);
-    });
   }
 };
 

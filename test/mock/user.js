@@ -4,7 +4,7 @@ var User = {
   add: function (username, password, email, callback) {
     var result = {
       affectedRows: 1
-    };
+    };    
     return callback(null, result);
   },
   get: function (username, callback) {

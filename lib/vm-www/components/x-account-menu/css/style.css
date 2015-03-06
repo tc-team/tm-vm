@@ -1,32 +1,32 @@
-paper-icon-button::shadow core-icon{
-    width: 40px ;
-    height: 40px;
-}
-paper-dropdown {
-    top: 45px;
-    left: -69px;
-} 
-.menu {
-    color: #212121;
-    margin: 0;
-}
 #logOut {
-	color: #03a9f4;
-	font-size: 18px;
-}
-core-overlay {
-	background-color: #fff;
-	color: #212121;
-}
-
-#profile {
 	font-size: 18px;
 }
 
 paper-item, core-icon {
-  color: black;
+  color: #212121;
 }
 
 core-icon {
     margin-right: 10px;
+}
+
+core-overlay {
+  background-color: #fff;
+  max-width: 450px;
+  color: #212121;
+}
+
+core-overlay p {
+  margin: 20px;
+  color: #212121;
+  line-height: 2em;
+  text-align: center;
+}
+core-overlay paper-button {
+  color: #FF4081;
+  margin-bottom: 5px;
+}
+
+paper-button::shadow #ripple {
+    color: #FF4081;
 }
