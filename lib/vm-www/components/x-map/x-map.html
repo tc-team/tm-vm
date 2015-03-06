@@ -1,17 +1,7 @@
-
-<polymer-element name="x-map">
-	<template>
-		<link rel="stylesheet" type="text/css" href="css/x-map.css">
-
- 		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
-		<google-map map="{{map}}"
-					latitude="{{localLat}}"
-					longitude="{{localLong}}"
-					zoom="{{zoom}}"
-					disableDefaultUI>
-		</google-map>
-	</template>
-	
-	 <script src="js/x-map.js"></script>
+<link rel="import" href="../../bower_components/google-apis/google-maps-api.html">
+<polymer-element name='x-map' attributes='marks' extends='google-map'>
+		<template>
+			<shadow></shadow>
+        </template> 
+	<script src="js/x-map.js"></script>
 </polymer-element>
-
