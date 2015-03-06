@@ -1,23 +1,9 @@
 'use strict';
 
 var should = require('chai').should();
-
-var mockery = require( 'mockery');
-var userMock = '../../../test/mock/user.js';
 var userService = '../../../lib/vm-api/services/User';
 
 describe('#getUser()', function() {
-	
-	before(function () {
-    	mockery.enable({ useCleanCache: true });
-		mockery.registerAllowable(userService);
-    	mockery.registerSubstitute('../models/User', userMock);
-    	mockery.warnOnUnregistered(false);
-  	});
-
-  	after(function () {
-	    mockery.disable();
-  	});
 
 	it('should get user info', function(done) {
     	

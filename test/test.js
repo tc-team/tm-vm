@@ -10,13 +10,12 @@ describe('SERVICE UNIT:', function() {
 
   require('./unit/user');
   
-  //require('./unit/session');
+  require('./unit/session');
 
-  //require('./unit/token');
+  require('./unit/token');
 
-  /*require('./unit/product');
-  */
+  require('./unit/product');
 
-  //require('./unit/memo');
+  require('./unit/memo');
 
 });
