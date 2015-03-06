@@ -1,10 +1,10 @@
-<polymer-element name="x-account-menu" attributes="logged">
+<polymer-element name="x-account-menu" attributes="logged sessionService">
     <template>
         <link rel="stylesheet" href="css/style.css">
         
         <core-ajax id="ajaxDelSess"
             auto="false"
-            url="http://localhost:3000/session"
+            url="{{sessionService}}"
             method="DELETE"
             handleAs="json"
             withCredentials="true"
