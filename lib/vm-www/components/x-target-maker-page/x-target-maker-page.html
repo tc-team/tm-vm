@@ -1,36 +1,49 @@
 <polymer-element name="x-target-maker-page">
 	<template>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<core-ajax id="deleteMarker"
+	            auto="false"
+	            url="http://localhost:3000/target/{{delMarkerID}}"
+	            method="DELETE"
+	            handleAs="json"
+	            withCredentials="true"
+	            on-core-response="{{handleResDelMarker}}">
+        </core-ajax>
 
 		<template is="auto-binding">
-		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
-		
-		<x-map on-google-map-ready="{{xMapReady}}"
-			   latitude="{{localLat}}"
-			   longitude="{{localLong}}"
-			   marks="{{marks}}"
-			   disableDefaultUI>
 
-				<template repeat="{{marker in marks}}">
-					<google-map-marker latitude="{{marker.latitude}}"
-										longitude="{{marker.longitude}}"
-										title="{{marker.name}}"
-										draggable="true">
-						<!-- <b>title</b><br>
-						<p>Lat: "{{marker.latitude}}"<br>
-						   Lng: "{{marker.longitude}}"
-						</p> -->
-					</google-map-marker>
-				</template>
-		</x-map>
+			<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
+			
+			<x-map on-google-map-ready="{{xMapReady}}"
+				   latitude="{{localLat}}"
+				   longitude="{{localLong}}"
+				   marks="{{marks}}"
+				   clickEvents="true"
+				   disableDefaultUI>
 
-		<x-card id="core_card" layout vertical>
-				<template repeat="{{marker in marks}}">
-					{{marker.name}}<br>
-					{{marker.latitude}}<br>
-					{{marker.longitude}}"<br><br>
-				</template>
-		</x-card>
+					<template repeat="{{marker in marks}}">
+						<google-map-marker latitude="{{marker.latitude}}"
+											longitude="{{marker.longitude}}"
+											title="{{marker.name}}"
+											draggable="true"
+											clickEvents="true">
+							<b>title</b><br>
+							<p>Lat: "{{marker.latitude}}"<br>
+							   Lng: "{{marker.longitude}}"
+							</p>
+							<paper-fab raised icon="delete" on-click="{{deleteMarker}}"></paper-fab>
+						</google-map-marker>
+					</template>
+			</x-map>
+
+			<x-card id="core_card" layout vertical>
+					<template repeat="{{marker in marks}}">
+						{{marker.name}}<br>
+						{{marker.latitude}}<br>
+						{{marker.longitude}}"<br><br>
+					</template>
+			</x-card>
 		</template>
 
 	</template>

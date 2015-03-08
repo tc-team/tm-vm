@@ -8,7 +8,7 @@
     "start": "sudo node server.js",
     "test": "mocha --timeout=5000"
   },
-  "author": "P.Tkachuk",
+  "author": "TC",
   "license": "ISC",
   "repository": {
     "type": "git",
