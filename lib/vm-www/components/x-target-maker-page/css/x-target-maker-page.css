@@ -4,7 +4,7 @@ x-map {
 	height: 100%;
 }
 
-#core_card {
+/*#core_card {
 	position: absolute;
 	width: 300px;
 	height: 300px;
@@ -16,4 +16,4 @@ x-map {
 	top: 30px;
 	left: 30px;
 	background-color: rgb(255, 255, 255)
-}
+}*/
