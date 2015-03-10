@@ -1,8 +1,8 @@
-<polymer-element name="x-login-register-page" attributes="sessionState">
+<polymer-element name="x-login-register-page" attributes="tokenValue sessionState">
   <template>
   	<link rel="stylesheet" href="css/style.css">
   	<div horizontal center-justified layout>
-   		<x-login-register-form logged="{{sessionState}}"></x-login-register-form>
+   		<x-login-register-form token="{{tokenValue}}" logged="{{sessionState}}"></x-login-register-form>
 	</div>
   </template>
   <script src='js/script.js'></script>

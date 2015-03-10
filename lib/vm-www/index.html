@@ -12,9 +12,13 @@
             <x-panel sessionState="{{isSession}}" selectedTab="{{selectedTab}}">
                 <x-user-session sessionState="{{isSession}}"></x-user-session>
                 <app-router mode="hash">
+                
+                    <app-route path="/login/:tokenValue" import="/components/x-login-register-page/x-login-register-page.html" bindRouter>
+                    </app-route>
 
                     <app-route path="/login" import="/components/x-login-register-page/x-login-register-page.html" bindRouter>
                     </app-route>
+
 
                     <app-route path="/profile/:tokenValue" import="components/x-profile-page/x-profile-page.html" bindRouter>
                     </app-route>

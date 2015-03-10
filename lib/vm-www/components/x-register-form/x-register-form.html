@@ -1,38 +1,82 @@
-<polymer-element name="x-register-form" attributes="islogged" on-keypress="{{keypressHandler}}">
-  <template>
-    <link rel="stylesheet" href="css/style.css">
+<polymer-element name="x-register-form" attributes="islogged token" on-keypress="{{keypressHandler}}">
+    <template>
+        <link rel="stylesheet" href="css/style.css">
 
-    <core-ajax id="ajax"
-      auto="false"
-      url="http://localhost:3000/user"
-      method="POST"
-      handleAs="json"
-      withCredentials="true"
-      params = '{
-        "username": "{{username}}",
-        "password": "{{password}}",
-        "email": "{{email}}"
-      }'
-      on-core-response="{{handleResponse}}">
-    </core-ajax>
+        <core-ajax id="registerUser"
+            auto="false"
+            url="http://localhost:3000/user"
+            method="POST"
+            handleAs="json"
+            withCredentials="true"
+            params = '{
+                "username": "{{username}}",
+                "password": "{{password}}",
+                "email": "{{email}}"
+            }'
+            on-core-response="{{handleResRegister}}">
+        </core-ajax>
 
-    <span>Create account</span><br>
-    <core-icon class="icon" icon="account-circle"></core-icon>
+        <core-ajax id="createToken"
+            auto="false"
+            url="http://localhost:3000/token"
+            method="POST"
+            params = '{
+                "email": "{{email}}",
+                "username": "{{username}}",
+                "typeOfToken": "registerUser"
+            }'
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResCreateTok}}">
+        </core-ajax>
 
-    <paper-input-decorator floatingLabel  label="Username" error="Value must start with a letter! Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.uinput.validity.valid}}">
-      <input id="uinput" pattern="^[a-zA-Z ]+[a-zA-Z0-9_-]*" is="core-input" type="text" value="{{username}}"></input>
-    </paper-input-decorator>
-    <paper-input-decorator floatingLabel  label="Email" autoValidate>
-      <input id="einput" is="core-input" type="email" value="{{email}}"></input>
-    </paper-input-decorator>
-    <paper-input-decorator floatingLabel  label="Password" error="Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.pinput.validity.valid}}">
-      <input id="pinput" pattern="[a-zA-Z0-9_-]*" is="core-input" type="password" value="{{password}}"></input>
-    </paper-input-decorator>
-    <paper-input-decorator id="confirm" floatingLabel  label="Confirm Your password" error="Your password and confirmation password do not match.">
-      <input id="pcinput" type="password" is="core-input" value="{{confirmPassword}}" on-change="{{handleConfirm}}"></input>
-    </paper-input-decorator>
+        <core-ajax id="checkToken"
+            auto="false"
+            url="http://localhost:3000/token/{{token}}"
+            method="GET"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResCheckTok}}">
+        </core-ajax>
 
-    <paper-button on-click="{{sendRequest}}">Create account</paper-button>
-  </template>
-  <script src="js/script.js"></script>
+        <span>Create account</span><br>
+        <core-icon class="icon" icon="account-circle"></core-icon>
+
+        <paper-input-decorator floatingLabel  label="Username" error="Value must start with a letter! Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.uinput.validity.valid}}">
+            <input id="uinput" pattern="^[a-zA-Z ]+[a-zA-Z0-9_-]*" is="core-input" type="text" value="{{username}}"></input>
+        </paper-input-decorator>
+
+        <paper-input-decorator floatingLabel  label="Email" autoValidate>
+            <input id="einput" is="core-input" type="email" value="{{email}}"></input>
+        </paper-input-decorator>
+
+        <paper-input-decorator floatingLabel  label="Password" error="Allowed: a-z A-Z 0-9 _ -" isInvalid="{{!$.pinput.validity.valid}}">
+            <input id="pinput" pattern="[a-zA-Z0-9_-]*" is="core-input" type="password" value="{{password}}"></input>
+        </paper-input-decorator>
+
+        <paper-input-decorator id="confirm" floatingLabel  label="Confirm Your password" error="Your password and confirmation password do not match.">
+            <input id="pcinput" type="password" is="core-input" value="{{confirmPassword}}" on-change="{{handleConfirm}}"></input>
+        </paper-input-decorator>
+
+
+
+        <paper-button on-click="{{sendRequest}}">Create account</paper-button>
+
+        <core-overlay id="tokkenCreated" backdrop autoCloseDisabled>
+            <h3>Check email</h3>
+            <span>To confirm registration, click on the link in the email</span>
+            
+            <div horizontal center-justified layout>
+                <paper-button core-overlay-toggle>Ok</paper-button>
+            </div>
+        </core-overlay>
+
+        <core-overlay id="registerSuccess" backdrop autoCloseDisabled>
+            <span>Registration was successful. You can log in.</span>
+            <div horizontal center-justified layout>
+                <paper-button core-overlay-toggle on-click="{{switchToLogIn}}">Ok</paper-button>
+            </div>
+        </core-overlay>
+    </template>
+    <script src="js/script.js"></script>
 </polymer-element>
