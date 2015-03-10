@@ -10,19 +10,19 @@ core-icon {
     margin-right: 10px;
 }
 
-core-overlay {
+#logOut {
   background-color: #fff;
   max-width: 450px;
   color: #212121;
 }
 
-core-overlay p {
+#logOut p {
   margin: 20px;
   color: #212121;
   line-height: 2em;
   text-align: center;
 }
-core-overlay paper-button {
+#logOut paper-button {
   color: #FF4081;
   margin-bottom: 5px;
 }

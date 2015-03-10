@@ -46,7 +46,8 @@
             url="http://localhost:3000/token"
             method="POST"
             params = '{
-                "email": "{{user.email}}"
+                "email": "{{user.email}}",
+                "typeOfToken": "passwordReset"
             }'
             handleAs="json"
             withCredentials="true"

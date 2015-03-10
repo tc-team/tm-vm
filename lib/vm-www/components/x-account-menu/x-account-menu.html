@@ -24,13 +24,11 @@
             </core-dropdown>
         </x-trigger-dropdown>
         
-        <core-overlay id='logOut' backdrop autoCloseDisabled>
+        <paper-action-dialog id='logOut' backdrop autoCloseDisabled>
             <p>Are you sure you want to <br> Log Out?</p>
-            <div horizontal center-justified layout>
-                <paper-button core-overlay-toggle>No</paper-button>
-                <paper-button on-click="{{executeLogOut}}" core-overlay-toggle>Yes</paper-button>
-            </div>
-        </core-overlay>
+            <paper-button dismissive>More Info</paper-button>
+            <paper-button affirmative on-click="{{executeLogOut}}">Yes</paper-button>
+        </paper-action-dialog>
      
     </template>
 
