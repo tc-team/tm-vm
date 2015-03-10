@@ -12,7 +12,7 @@
                 New voice memo
             </core-toolbar>
             
-            <x-memo-recorder reload="{{reloadList}}" id="recorder">
+            <x-memo-recorder reload="{{reloadList}}" memoService="http://localhost:3000/memo" id="recorder">
             </x-memo-recorder>
             
             <paper-button core-overlay-toggle on-click="{{stopRecorder}}">cancel</paper-button>
