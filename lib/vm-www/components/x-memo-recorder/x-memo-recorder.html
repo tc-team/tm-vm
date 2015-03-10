@@ -1,9 +1,9 @@
-<polymer-element name="x-memo-recorder" attributes="reload">
+<polymer-element name="x-memo-recorder" attributes="reload memoService">
     <template>
         <link rel="stylesheet" href="css/style.css">
         
         <core-ajax id="ajax"
-            url="http://localhost:3000/memo"
+            url="{{memoService}}"
             method="POST"
             contentType="multipart/form-data"
             handleAs="json"
@@ -35,6 +35,6 @@
         </div>
 
     </template>
-    <script src="../../../js/voice-memos/voice-recorder/voice-recorder.js"></script>
+    <script src="js/voice-recorder.js"></script>
     <script src="js/script.js"></script>
 </polymer-element>
