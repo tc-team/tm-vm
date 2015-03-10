@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/google-apis/google-maps-api.html">
+
+<polymer-element name='x-map-marker' extends='google-map-marker' attributes="targetId">
+		<template>
+			<link rel="stylesheet" href="css/x-map.css">
+
+		     <core-ajax id="dragMark"
+		        auto = "false"
+		        url="http://localhost:3000/target"
+		        method="POST"
+		        handleAs="json"
+		        params = '{
+					"id": "{{targetId}}",
+					"longitude": "{{lng}}",
+					"latitude": "{{lat}}",
+					"description": "test",
+					"status": "test"
+				}'
+		        withCredentials="true"
+		        on-core-response="{{handleResSaveMark}}">
+		    </core-ajax>
+
+		    <core-ajax id="updateMarker"
+		        auto = "false"
+		        url="http://localhost:3000/target"
+		        method="PUT"
+		        handleAs="json"
+		        params = '{
+					"id": "{{targetId}}",
+					"longitude": "{{longitude}}",
+					"latitude": "{{latitude}}"
+				}'
+		        withCredentials="true"
+		        on-core-response="{{handleResUpdateMark}}">
+		    </core-ajax>
+	        
+			<shadow></shadow>
+        </template> 
+	<script src="js/x-map-marker.js"></script>
+</polymer-element>

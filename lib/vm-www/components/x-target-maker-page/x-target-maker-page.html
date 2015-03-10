@@ -1,37 +1,42 @@
 <polymer-element name="x-target-maker-page">
 	<template>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
 
-		<template is="auto-binding">
+		
 			<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
 			
-			<x-map on-google-map-ready="{{xMapReady}}"
-				   latitude="{{localLat}}"
+			<x-map latitude="{{localLat}}"
 				   longitude="{{localLong}}"
 				   marks="{{marks}}"
-				   disableDefaultUI>
+				   disableDefaultUI
+				   dragEvents
+				   mouseEvents
+				   clickEvents>
 
 					<template repeat="{{marker in marks}}">
-						<google-map-marker latitude="{{marker.latitude}}"
+						<x-map-marker latitude="{{marker.latitude}}"
 											longitude="{{marker.longitude}}"
 											title="{{marker.name}}"
-											draggable="true">
+											targetId="{{marker.id}}"
+											draggable="true"
+											mouseEvents
+											clickEvents>
 							<b>title</b><br>
 							<p>Lat: "{{marker.latitude}}"<br>
 							   Lng: "{{marker.longitude}}"
 							</p>
-						</google-map-marker>
+						</x-map-marker>
 					</template>
 			</x-map>
 
-			<x-card id="core_card" layout vertical>
+			<!-- <x-card id="core_card" layout vertical>
 				<template repeat="{{marker in marks}}">
 					<span>{{marker.name}}</span>
 					<span>{{marker.latitude}}</span>
 					<span>{{marker.longitude}}</span>
 				</template>
-			</x-card>
-		</template>
+			</x-card> -->
+		
 
 	</template>
 	<script src="js/script.js"></script>

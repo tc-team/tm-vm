@@ -1,6 +1,5 @@
-/*google-map {
-	position: fixed;
-	width:100%;
-	height:100%
+:host {
+	position: fixed;;
+	width: 100%;
+	height: 100%;
 }
-*/
