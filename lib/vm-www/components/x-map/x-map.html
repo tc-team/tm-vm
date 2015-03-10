@@ -18,7 +18,7 @@
 	            handleAs="json"
 	            params = '{
 			      "tile": "{{name}}",
-			      "longtitude": "{{lng}}",
+			      "longitude": "{{lng}}",
 			      "latitude": "{{lat}}",
 			      "description": "test",
 			      "status": "test"
@@ -26,6 +26,8 @@
 	            withCredentials="true"
 	            on-core-response="{{handleResSaveMark}}">
 	        </core-ajax>
+
+	        
 
 			<shadow></shadow>
         </template> 

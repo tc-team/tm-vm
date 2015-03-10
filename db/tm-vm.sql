@@ -165,7 +165,7 @@ DROP TABLE IF EXISTS `target`;
 CREATE TABLE `target` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(20) NOT NULL,
-  `longtitude` decimal(11,8) NOT NULL,
+  `longitude` decimal(11,8) NOT NULL,
   `latitude` decimal(10,8) NOT NULL,
   `description` varchar(50) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
