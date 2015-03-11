@@ -2,46 +2,54 @@
 
 var Target = {
 
-	add: function(title, longtitude, latitude, description, status, username, callback) {
+	add: function(title, longitude, latitude, description, status, username, callback) {
 		var result = 1;
 		return callback(null, result);
 	},
 
-	setTitle: function(newTitle, longtitude, latitude, username, callback) {
+	setTitle: function(newTitle, id, callback) {
 		return callback(null, 1);
 	},
 
-	setDescription: function(newDescription, longtitude, latitude, username, callback) {
+	setDescription: function(newDescription, id, callback) {
 		return callback(null, 1);
 	},
 
-	setStatus: function(newStatus, longtitude, latitude, username, callback) {
+	setStatus: function(newStatus, id, callback) {
 		return callback(null, 1);
 	},
 
-	get: function(longtitude, latitude, username, callback) {
+	setLongitude: function(newLongitude, id, callback) {
+		return callback(null, 1);
+	},
+
+	setLatitude: function(newLatitude, id, callback) {
+		return callback(null, 1);
+	},
+
+	get: function(longitude, latitude, username, callback) {
 		var result = [{
 			title: 'title',
-			longtitude: longtitude,
+			longitude: longitude,
 			latitude: latitude,
 			description: 'description',
 			staus: 'false',
 			username: username
 		}];
 		return callback(null, result);
-	},
+	}, 
 
-	getAll: function(longtitude, latitude, username, callback) {
+	getAll: function(username, callback) {
 		var result = [{
 			title: 'title',
-			longtitude: longtitude,
-			latitude: latitude,
+			longitude: 30.12,
+			latitude: 40.21,
 			description: 'description',
 			staus: 'false',
 			username: username
 		}];
 		return callback(null, result);	
-	},
+	}, 
 
 	delete: function(id, callback) {
 		return callback(null, 1);
@@ -50,6 +58,6 @@ var Target = {
 	deleteAll: function(username, callback) {
 		return callback(null, 1); 
 	}
-};
+}; 
 
 module.exports = Target;

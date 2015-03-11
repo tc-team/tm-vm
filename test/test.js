@@ -18,4 +18,6 @@ describe('SERVICE UNIT:', function() {
 
   require('./unit/memo');
 
+  require('./unit/target');
+
 });
