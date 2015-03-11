@@ -1,13 +1,15 @@
-<polymer element name="x-card">
+<polymer-element name="x-card">
 	<template>
 
 		<link rel="stylesheet" href="css/x-card.css">
 
-		<div class="content" horizontal layout>
-			<p>test</p>
+		<div id="card">
+			<div class="content" horizontal layout>
+				<content></content>
+			</div>
+			<paper-button>Button</paper-button>
 		</div>
-		<paper-button>test</paper-button>
 
 	</template>
 	<script src="js/x-card.js"></script>
-</polymer element>
+</polymer-element>

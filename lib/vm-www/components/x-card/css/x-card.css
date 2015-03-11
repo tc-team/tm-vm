@@ -1,8 +1,5 @@
-x-card {
-	position: absolute;
+:host {
 	display: block;
-	left: 30px;
-	top: 30px;
 	width: 300px;
 	height: 300px;
 	border-top-left-radius: 2px;
@@ -13,7 +10,8 @@ x-card {
 	background-color: white;
 }
 .content {
-	height: 250px;
+	height: 220px;
+	padding: 15px; 
 	overflow: hidden;
 	overflow-y: scroll;
 }
