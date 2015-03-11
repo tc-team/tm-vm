@@ -1,15 +1,6 @@
 <polymer-element name="x-target-maker-page">
 	<template>
-			<core-ajax id="deleteMarker"
-		        auto = "false"
-		        url="http://localhost:3000/target/{{targetId}}"
-		        method="DELETE"
-		        handleAs="json"
-		        withCredentials="true"
-		        on-core-response="{{handleResDelMark}}">
-		    </core-ajax>
-	
-		
+					
 			<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
 			
 			<x-map latitude="{{localLat}}"
@@ -28,11 +19,6 @@
 											draggable="true"
 											mouseEvents
 											clickEvents>
-							<b>title</b><br>
-							<p>Lat: "{{marker.latitude}}"<br>
-							   Lng: "{{marker.longitude}}"
-							</p>
-							<paper-button raised id="deleteButton" icon="delete"></paper-button>
 						</x-map-marker>
 					</template>
 			</x-map>
