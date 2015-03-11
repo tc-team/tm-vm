@@ -19,11 +19,7 @@ var Target = {
 		return callback(null, 1);
 	},
 
-	setLongitude: function(newLongitude, id, callback) {
-		return callback(null, 1);
-	},
-
-	setLatitude: function(newLatitude, id, callback) {
+	setCoordinates: function(newLongitude, newLatitude, id, callback) {
 		return callback(null, 1);
 	},
 
