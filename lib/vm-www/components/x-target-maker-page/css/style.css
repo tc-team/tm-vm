@@ -1,3 +1,4 @@
+
 #core_card {
 	position: absolute;
 	width: 300px;
@@ -11,3 +12,10 @@
 	left: 30px;
 	background-color: rgb(255, 255, 255)
 } 
+
+
+#deleteButton {
+	color: #000;
+}
+
+

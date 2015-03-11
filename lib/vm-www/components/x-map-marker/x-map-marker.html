@@ -17,6 +17,15 @@
 		        on-core-response="{{handleResUpdateMark}}">
 		    </core-ajax>
 	        
+	        <core-ajax id="deleteMarker"
+		        auto = "false"
+		        url="http://localhost:3000/target/{{targetId}}"
+		        method="DELETE"
+		        handleAs="json"
+		        withCredentials="true"
+		        on-core-response="{{handleResDelMark}}">
+		    </core-ajax>
+	
 			<content></content>
         </template> 
 	<script src="js/x-map-marker.js"></script>
