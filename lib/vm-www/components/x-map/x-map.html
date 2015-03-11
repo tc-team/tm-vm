@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/google-apis/google-maps-api.html">
 
-<polymer-element name='x-map' attributes='marks' extends='google-map'>
+<polymer-element name='x-map' attributes='marks' extends='google-map' on-google-map-ready="{{xMapReady}}">
 		<template>
 			<link rel="stylesheet" href="css/x-map.css">
 			<core-ajax id="getMarks"
@@ -27,6 +27,27 @@
 	            withCredentials="true"
 	            on-core-response="{{handleResSaveMark}}">
 	        </core-ajax>
+			
+			<content id="markers" select="x-map-marker"></content>
+
+	    <!--     <core-ajax id="dragMark"
+	        auto = "false"
+	        url="http://localhost:3000/target"
+	        method="POST"
+	        handleAs="json"
+	        params = '{
+	    			      "tile": "{{name}}",
+	    			      "longitude": "{{lng}}",
+	    			      "latitude": "{{lat}}",
+	    			      "description": "test",
+	    			      "status": "test"
+	    			    }'
+	        withCredentials="true"
+	        on-core-response="{{handleResSaveMark}}">
+	    </core-ajax>
+	     -->
+
+
 	        
 			<shadow></shadow>
         </template> 

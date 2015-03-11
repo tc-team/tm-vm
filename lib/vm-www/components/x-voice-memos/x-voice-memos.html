@@ -12,13 +12,13 @@
                 New voice memo
             </core-toolbar>
             
-            <x-memo-recorder reload="{{reloadList}}" id="recorder">
+            <x-memo-recorder reload="{{reloadList}}" memoService="http://localhost:3000/memo" id="recorder">
             </x-memo-recorder>
             
             <paper-button core-overlay-toggle on-click="{{stopRecorder}}">cancel</paper-button>
         </core-overlay>        
 
-        <x-memos-list id="memosList" reloadList="{{reloadList}}"></x-memos-list>
+        <x-memos-list id="memosList" reloadList="{{reloadList}}" memoService="http://localhost:3000/memo"></x-memos-list>
 
         <paper-fab icon="add" id="addMemosButton" on-click="{{handleMemoDialog}}"></paper-fab>
     </template>

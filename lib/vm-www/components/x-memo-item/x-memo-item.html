@@ -1,10 +1,10 @@
-<polymer-element name="x-memo-item" attributes="name src memoId reloadList">
+<polymer-element name="x-memo-item" attributes="name src memoId reloadList memoService">
 	<template>
 		<link rel="stylesheet" href="css/style.css">
 
 		<core-ajax id="ajaxDeleteMemo"
 			auto="false"
-			url="http://localhost:3000/memo/{{memoId}}"
+			url="{{memoService}}/{{memoId}}"
 			method="DELETE"
 			handleAs="json"
 			withCredentials="true"
@@ -14,7 +14,7 @@
 
 		<core-ajax id="ajaxEditMemo"
 			auto="false"
-			url="http://localhost:3000/memo/{{memoId}}"
+			url="{{memoService}}/{{memoId}}"
 			method="PUT"
 			params = '{
 	        	"newName": "{{newName}}"

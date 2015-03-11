@@ -7,8 +7,8 @@
                 <paper-tab>Create Account</paper-tab>
             </paper-tabs>
             <core-pages selected="{{select}}">          
-                <x-login-form islogged="{{logged}}"></x-login-form>
-                <x-register-form token="{{token}}" islogged="{{logged}}"></x-register-form>
+                <x-login-form islogged="{{logged}}" sessionService="http://localhost:3000/session"></x-login-form>
+                <x-register-form token="{{token}}" islogged="{{logged}}" userService="http://localhost:3000/user" tokenService="http://localhost:3000/token"></x-register-form>
             </core-pages>
         </paper-shadow>
     </template>

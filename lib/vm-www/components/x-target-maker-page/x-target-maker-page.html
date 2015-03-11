@@ -1,42 +1,28 @@
 <polymer-element name="x-target-maker-page">
 	<template>
-	<style>
-		paper-card {
-			width: 300px;
-			margin: 8px auto;
-			top: 30px;
-			left: 30px;
-		}
-	</style>
-
+	<link rel="stylesheet" type="text/css" href="css/style.css"></link>	
 		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
-		<x-map on-google-map-ready="{{xMapReady}}"
-			   latitude="{{localLat}}"
+		
+		<x-map latitude="{{localLat}}"
 			   longitude="{{localLong}}"
 			   marks="{{marks}}"
 			   disableDefaultUI
-			   clickEvents="true">
-			   <!-- mouseEvents="true" -->
+			   dragEvents
+			   mouseEvents
+			   clickEvents>
 
-			<template repeat="{{marker in marks}}">
-				<google-map-marker latitude="{{marker.latitude}}"
-									longitude="{{marker.longitude}}"
-									title="{{marker.name}}"
-									draggable="true"
-									clickEvents="true"
-									mouseEvents="true"
-									on-google-map-marker-dblclick="{{openCard}}"
-									>
-									<!-- on-google-map-marker-click="{{markerClicked}}" -->
-					<b>title</b><br>
-					<p>Lat: "{{marker.latitude}}"<br>
-					   Lng: "{{marker.longitude}}"
-					</p>
-				</google-map-marker>
-			</template>
+				<template repeat="{{marker in marks}}">
+					<x-map-marker latitude="{{marker.latitude}}"
+										longitude="{{marker.longitude}}"
+										title="{{marker.name}}"
+										targetId="{{marker.id}}"
+										draggable="true"
+										mouseEvents
+										clickEvents>
+					</x-map-marker>
+				</template>
 		</x-map>
 
-		<!-- <x-card></x-card> -->
 		<paper-card >
 			<div content>
 				<div>Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. 

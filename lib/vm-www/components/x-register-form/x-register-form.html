@@ -1,10 +1,10 @@
-<polymer-element name="x-register-form" attributes="islogged token" on-keypress="{{keypressHandler}}">
+<polymer-element name="x-register-form" attributes="islogged token userService tokenService" on-keypress="{{keypressHandler}}">
     <template>
         <link rel="stylesheet" href="css/style.css">
 
         <core-ajax id="registerUser"
             auto="false"
-            url="http://localhost:3000/user"
+            url="{{userService}}"
             method="POST"
             handleAs="json"
             withCredentials="true"
@@ -18,7 +18,7 @@
 
         <core-ajax id="createToken"
             auto="false"
-            url="http://localhost:3000/token"
+            url="{{tokenService}}"
             method="POST"
             params = '{
                 "email": "{{email}}",
@@ -32,7 +32,7 @@
 
         <core-ajax id="checkToken"
             auto="false"
-            url="http://localhost:3000/token/{{token}}"
+            url="{{tokenService}}/{{token}}"
             method="GET"
             handleAs="json"
             withCredentials="true"
