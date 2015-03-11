@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/google-apis/google-maps-api.html">
+
+<polymer-element name='x-map-marker' extends='google-map-marker' attributes="targetId">
+		<template>
+			<link rel="stylesheet" href="css/x-map.css">
+
+		    <core-ajax id="updateMarker"
+		        auto = "false"
+		        url="http://localhost:3000/target/{{targetId}}"
+		        method="PUT"
+		        handleAs="json"
+		        params = '{
+					"newLongitude": "{{longitude}}",
+					"newLatitude": "{{latitude}}"
+				}'
+		        withCredentials="true"
+		        on-core-response="{{handleResUpdateMark}}">
+		    </core-ajax>
+	        
+			<content></content>
+        </template> 
+	<script src="js/x-map-marker.js"></script>
+</polymer-element>
