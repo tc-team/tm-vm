@@ -4,37 +4,20 @@
 		<template>
 			<link rel="stylesheet" href="css/x-map.css">
 
-		     <core-ajax id="dragMark"
-		        auto = "false"
-		        url="http://localhost:3000/target"
-		        method="POST"
-		        handleAs="json"
-		        params = '{
-					"id": "{{targetId}}",
-					"longitude": "{{lng}}",
-					"latitude": "{{lat}}",
-					"description": "test",
-					"status": "test"
-				}'
-		        withCredentials="true"
-		        on-core-response="{{handleResSaveMark}}">
-		    </core-ajax>
-
 		    <core-ajax id="updateMarker"
 		        auto = "false"
-		        url="http://localhost:3000/target"
+		        url="http://localhost:3000/target/{{targetId}}"
 		        method="PUT"
 		        handleAs="json"
 		        params = '{
-					"id": "{{targetId}}",
-					"longitude": "{{longitude}}",
-					"latitude": "{{latitude}}"
+					"newLongitude": "{{longitude}}",
+					"newLatitude": "{{latitude}}"
 				}'
 		        withCredentials="true"
 		        on-core-response="{{handleResUpdateMark}}">
 		    </core-ajax>
 	        
-			<shadow></shadow>
+			<content></content>
         </template> 
 	<script src="js/x-map-marker.js"></script>
 </polymer-element>
