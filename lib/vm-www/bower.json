@@ -22,6 +22,7 @@
     "paper-elements": "Polymer/paper-elements#~0.5.4",
     "google-map": "Polymer/google-map#~0.4.1",
     "app-router": "~2.5.0",
-    "geo-location": "~0.0.7"
+    "geo-location": "~0.0.7",
+    "paper-card": "git@github.com:PolymerLabs/paper-card.git"
   }
 }
