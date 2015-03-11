@@ -1,11 +1,11 @@
-<polymer-element name="x-memos-list" attributes="reloadList">
+<polymer-element name="x-memos-list" attributes="reloadList memoService">
 	<template>
 		<link rel="stylesheet" href="css/style.css">
 
 		<core-ajax 
 			id="ajax"
 			auto="false"
-			url="http://localhost:3000/memo"
+			url="{{memoService}}"
 			method="GET"
 			handleAs="json"
 			withCredentials="true"
@@ -14,7 +14,7 @@
 
 		<div layout vertical center>
 			<template repeat="{{memo in memos}}">
-				<x-memo-item src="{{memo.pathToFile}}" name="{{memo.name}}" memoId="{{memo.id}}" reloadList="{{reloadList}}"></x-memo-item>
+				<x-memo-item src="{{memo.pathToFile}}" name="{{memo.name}}" memoId="{{memo.id}}" reloadList="{{reloadList}}" memoService="{{memoService}}"></x-memo-item>
 			</template>
 		</div>
 	</template>

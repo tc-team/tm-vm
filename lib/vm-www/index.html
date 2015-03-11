@@ -10,7 +10,7 @@
     <body unresolved>
         <template is="auto-binding">
             <x-panel sessionState="{{isSession}}" selectedTab="{{selectedTab}}">
-                <x-user-session sessionState="{{isSession}}"></x-user-session>
+                <x-user-session sessionState="{{isSession}}" sessionService="http://localhost:3000/session"></x-user-session>
                 <app-router mode="hash">
                 
                     <app-route path="/login/:tokenValue" import="/components/x-login-register-page/x-login-register-page.html" bindRouter>
