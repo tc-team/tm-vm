@@ -9,7 +9,10 @@
 			   disableDefaultUI
 			   dragEvents
 			   mouseEvents
-			   clickEvents>
+			   clickEvents
+			   id="map"
+			   
+			   >
 
 				<template repeat="{{marker in marks}}">
 					<x-map-marker latitude="{{marker.latitude}}"
