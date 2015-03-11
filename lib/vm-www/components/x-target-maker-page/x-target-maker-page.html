@@ -1,37 +1,56 @@
 <polymer-element name="x-target-maker-page">
 	<template>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		paper-card {
+			width: 300px;
+			margin: 8px auto;
+			top: 30px;
+			left: 30px;
+		}
+	</style>
 
-		<template is="auto-binding">
-			<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
-			
-			<x-map on-google-map-ready="{{xMapReady}}"
-				   latitude="{{localLat}}"
-				   longitude="{{localLong}}"
-				   marks="{{marks}}"
-				   disableDefaultUI>
+		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
+		<x-map on-google-map-ready="{{xMapReady}}"
+			   latitude="{{localLat}}"
+			   longitude="{{localLong}}"
+			   marks="{{marks}}"
+			   disableDefaultUI
+			   clickEvents="true">
+			   <!-- mouseEvents="true" -->
 
-					<template repeat="{{marker in marks}}">
-						<google-map-marker latitude="{{marker.latitude}}"
-											longitude="{{marker.longitude}}"
-											title="{{marker.name}}"
-											draggable="true">
-							<b>title</b><br>
-							<p>Lat: "{{marker.latitude}}"<br>
-							   Lng: "{{marker.longitude}}"
-							</p>
-						</google-map-marker>
-					</template>
-			</x-map>
+			<template repeat="{{marker in marks}}">
+				<google-map-marker latitude="{{marker.latitude}}"
+									longitude="{{marker.longitude}}"
+									title="{{marker.name}}"
+									draggable="true"
+									clickEvents="true"
+									mouseEvents="true"
+									on-google-map-marker-dblclick="{{openCard}}"
+									>
+									<!-- on-google-map-marker-click="{{markerClicked}}" -->
+					<b>title</b><br>
+					<p>Lat: "{{marker.latitude}}"<br>
+					   Lng: "{{marker.longitude}}"
+					</p>
+				</google-map-marker>
+			</template>
+		</x-map>
 
-			<x-card id="core_card" layout vertical>
-				<template repeat="{{marker in marks}}">
-					<span>{{marker.name}}</span>
-					<span>{{marker.latitude}}</span>
-					<span>{{marker.longitude}}</span>
-				</template>
-			</x-card>
-		</template>
+		<!-- <x-card></x-card> -->
+		<paper-card >
+			<div content>
+				<div>Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. 
+					Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. 
+					Sed sale integre pericula ei, rebum adipiscing ius ea.
+				</div>
+			</div>
+			<div actions>
+				<core-icon-button icon="favorite" title="favorite"></core-icon-button>
+				<core-icon-button icon="bookmark" title="bookmark"></core-icon-button>
+				<core-icon-button icon="cloud-upload" title="cloud-upload"></core-icon-button>
+			</div>
+		</paper-card>
+
 
 	</template>
 	<script src="js/script.js"></script>
