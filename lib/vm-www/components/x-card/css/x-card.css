@@ -1,4 +1,7 @@
 :host {
+	position: absolute;	
+	top: 30px;
+	left: 30px;
 	display: block;
 	width: 300px;
 	height: 300px;
@@ -8,10 +11,4 @@
 	border-bottom-left-radius: 2px;
 	box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
 	background-color: white;
-}
-.content {
-	height: 220px;
-	padding: 15px; 
-	overflow: hidden;
-	overflow-y: scroll;
 }
