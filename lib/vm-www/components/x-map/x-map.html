@@ -3,6 +3,7 @@
 <polymer-element name='x-map' attributes='marks' extends='google-map' on-google-map-ready="{{xMapReady}}">
 		<template>
 			<link rel="stylesheet" href="css/x-map.css">
+			
 			<core-ajax id="getMarks"
 	            auto
 	            url="http://localhost:3000/target"
