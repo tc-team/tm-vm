@@ -1,0 +1,33 @@
+<polymer-element name="x-map-page">
+	<template>
+		<link rel="stylesheet" type="text/css" href="css/x-target-maker.css"></link>	
+		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
+		
+		<x-map latitude="{{localLat}}" longitude="{{localLong}}" marks="{{marks}}" disableDefaultUI dragEvents mouseEvents   clickEvents >
+
+				<template repeat="{{marker in marks}}">
+					<x-map-marker latitude="{{marker.latitude}}" longitude="{{marker.longitude}}" title="{{marker.name}}" targetId="{{marker.id}}"  draggable="true" mouseEvents clickEvents>
+						<div id="info_window">
+							<b>title</b><br>
+							<p>Lat: "{{marker.latitude}}"<br>
+							   Lng: "{{marker.longitude}}"
+							</p>
+							<paper-button raised id="deleteButton" icon="delete"></paper-button>
+						</div>
+					</x-map-marker>
+				</template>
+
+		</x-map>
+
+		<x-card>
+			<!-- <template if="{{selectMarker}}"> -->
+				<div>
+					Latitude: {{localLat}}<br>
+					Longitude: {{localLong}} 				
+				</div>
+		<!-- 	</template> -->
+		</x-card>
+
+	</template>
+	<script src="js/script.js"></script>
+</polymer-element>
