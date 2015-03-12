@@ -6,6 +6,7 @@
 		<x-map latitude="{{localLat}}"
 			   longitude="{{localLong}}"
 			   marks="{{marks}}"
+			   mapInfo="{{mapInfo}}"
 			   disableDefaultUI
 			   dragEvents
 			   mouseEvents
@@ -18,7 +19,8 @@
 								  targetId="{{marker.id}}"
 								  draggable="true"
 								  mouseEvents
-								  clickEvents>
+								  clickEvents
+								  on-google-map-marker-click="{{click}}">
 
 						<div id="info_window">
 							<b>title</b><br>
@@ -35,8 +37,8 @@
 		<x-card>
 			<!-- <template if="{{selectMarker}}"> -->
 				<div>
-					Latitude: {{localLat}}<br>
-					Longitude: {{localLong}} 				
+					Latitude: {{mapInfo.activeMarker.position.k}}<br>
+					Longitude: {{mapInfo.activeMarker.position.D}} 				
 				</div>
 		<!-- 	</template> -->
 		</x-card>
