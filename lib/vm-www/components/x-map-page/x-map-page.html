@@ -1,6 +1,5 @@
 <polymer-element name="x-map-page">
 	<template>
-<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="css/x-target-maker.css"></link>	
 		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
 		
@@ -17,50 +16,6 @@
 						</div>
 					</x-map-marker>
 				</template>
-
-=======
-		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"></link>	 -->
-	
-	    <core-ajax id="updateMarker"
-	        auto = "false"
-	        url="http://localhost:3000/target/{{targetId}}"
-	        method="PUT"
-	        handleAs="json"
-	        params = '{
-				"newLongitude": "{{longitude}}",
-				"newLatitude": "{{latitude}}"
-			}'
-	        withCredentials="true"
-	        on-core-response="{{handleResUpdateMark}}">
-	    </core-ajax>
-        
-        <core-ajax id="deleteMarker"
-	        auto = "false"
-	        url="http://localhost:3000/target/{{targetId}}"
-	        method="DELETE"
-	        handleAs="json"
-	        withCredentials="true"
-	        on-core-response="{{handleResDelMark}}">
-	    </core-ajax>
-
-		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
-		<x-map latitude="{{localLat}}"
-			   longitude="{{localLong}}"
-			   marks="{{marks}}"
-			   disableDefaultUI>
-
-				<template repeat="{{marker in marks}}">
-					<x-map-marker id="marker"		
-								  latitude="{{marker.latitude}}"
-								  longitude="{{marker.longitude}}"
-							      title="{{marker.name}}"
-								  targetId="{{marker.id}}"
-								  draggable="true"
-								  mouseEvents
-								  on-google-map-marker-click="{{click}}">
-					</x-map-marker>
-				</template>
->>>>>>> 3b993988e929e59a4625196c95b3e8fc5d0c9afd
 		</x-map>
 
 		<x-card>
