@@ -12,7 +12,6 @@
 			   clickEvents>
 
 				<template repeat="{{marker in marks}}">
-<<<<<<< HEAD
 					<x-map-marker latitude="{{marker.latitude}}"
 								  longitude="{{marker.longitude}}"
 								  title="{{marker.name}}"
@@ -20,9 +19,6 @@
 								  draggable="true"
 								  mouseEvents
 								  clickEvents>
-=======
-					<x-map-marker latitude="{{marker.latitude}}" longitude="{{marker.longitude}}" title="{{marker.name}}" targetId="{{marker.id}}"  draggable="true" mouseEvents clickEvents>
->>>>>>> 13e69334b85a1981f5cd5d65c1dcddd048583005
 
 						<div id="info_window">
 							<b>title</b><br>
@@ -31,11 +27,7 @@
 							</p>
 							<paper-button raised id="deleteButton" icon="delete">Delete</paper-button>
 						</div>
-<<<<<<< HEAD
 
-=======
-						
->>>>>>> 13e69334b85a1981f5cd5d65c1dcddd048583005
 					</x-map-marker>
 				</template>
 		</x-map>
