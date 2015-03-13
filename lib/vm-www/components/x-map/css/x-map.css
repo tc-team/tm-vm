@@ -3,3 +3,7 @@
 	height: 100%;
 	width: 100%;
 }
+
+:host::shadow #map .gm-style:first-child>div>div:nth-child(2n-1) {
+	transition: transform 0.5s;
+}
