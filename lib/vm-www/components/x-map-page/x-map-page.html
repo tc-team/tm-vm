@@ -1,6 +1,16 @@
 <polymer-element name="x-map-page">
 	<template>
-		<link rel="stylesheet" type="text/css" href="css/style.css"></link>	
+		<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+		
+		<core-ajax id="deleteMarker"
+	        auto = "false"
+	        url="http://localhost:3000/target/{{mapInfo.activeMarker.targetId}}"
+	        method="DELETE"
+	        handleAs="json"
+	        withCredentials="true"
+	        on-core-response="{{handleResDelMark}}">
+	    </core-ajax> 
+
 		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
 		
 		<x-map latitude="{{localLat}}"
@@ -26,21 +36,23 @@
 							<p>Lat: "{{marker.latitude}}"<br>
 							   Lng: "{{marker.longitude}}"
 							</p>
-							<paper-button raised id="deleteButton" icon="delete">Delete</paper-button>
+							
 						</div>
 
 					</x-map-marker>
 				</template>
 		</x-map>
 
-		<x-card>
-			<!-- <template if="{{selectMarker}}"> -->
-				<div>
-					Latitude: {{mapInfo.activeMarker.position.k}}<br>
-					Longitude: {{mapInfo.activeMarker.position.D}} 				
-				</div>
-		<!-- 	</template> -->
-		</x-card>
+		<template if="{{mapInfo.activeMarker}}">
+				<x-card>
+					<p>
+						Latitude: {{mapInfo.activeMarker.latitude}}<br>
+						Longitude: {{mapInfo.activeMarker.longitude}}
+					</p>
+						<core-icon-button raised id="deleteButton" icon="delete" on-click="{{executeDelete}}"></core-icon-button>
+					
+				</x-card>			
+	 	</template>
 
 	</template>
 	<script src="js/script.js"></script>

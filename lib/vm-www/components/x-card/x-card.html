@@ -2,12 +2,17 @@
 	<template>
 
 		<link rel="stylesheet" href="css/x-card.css">
-
-		<div id="card">
-			<div class="content" horizontal layout>
-				<content></content>
+		
+		<div id="card" vertical layout>
+			<div>
+				<content select="p"></content>
 			</div>
-			<paper-button>Button</paper-button>
+			<div flex></div>
+			<div horizontal end-justified layout>
+				<div>
+				<content select="#deleteButton"></content>
+				</div>
+			</div>
 		</div>
 
 	</template>
