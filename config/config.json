@@ -43,10 +43,10 @@
     }
   },
   "cache": {
-    "dirPath": "/map/",
+    "dirPath": "/home/zaratustra/tc-team/tm-vm/map/",
     "fileType": ".png",
-    "width": 256,
-    "heigth": 256,
+    "tileWidth": 256,
+    "tileHeigth": 256,
     "status": 1,
     "port": 80,
     "headers": {
