@@ -41,5 +41,15 @@
         "user": "test.tkachuk@gmail.com",
         "pass": "test159753"
     }
-  }
+  },
+  "cache": {
+    "dirPath": "/map/",
+    "fileType": ".png",
+    "width": 256,
+    "heigth": 256,
+    "port": 80,
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36"
+    }
+  }   
 }
