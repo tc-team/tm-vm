@@ -10,7 +10,7 @@
   },
 	"session": {
 		"secret": "FFRPLXN4kisBn9pdcGPm0ss0yyAsHzfJ",
-		"key": "sid",
+		"name": "sid",
 		"cookie": {
 			"path": "/",
 			"httpOnly": true,
