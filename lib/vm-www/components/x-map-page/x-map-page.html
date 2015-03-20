@@ -3,57 +3,77 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"></link>
 		
 		<core-ajax id="deleteMarker"
-	        auto = "false"
-	        url="http://localhost:3000/target/{{mapInfo.activeMarker.targetId}}"
-	        method="DELETE"
-	        handleAs="json"
-	        withCredentials="true"
-	        on-core-response="{{handleResDelMark}}">
-	    </core-ajax> 
+				   auto = "false"
+				   url="http://localhost:3000/target/{{mapInfo.activeMarker.targetId}}"
+				   method="DELETE"
+				   handleAs="json"
+				   withCredentials="true"
+				   on-core-response="{{handleResDelMark}}">
+		</core-ajax> 
 
-		<geo-location latitude="{{localLat}}" longitude="{{localLong}}" watchpos></geo-location>
-		
+		<geo-location latitude="{{localLat}}"
+					  longitude="{{localLong}}"
+					  on-geo-response="{{getLocalPos}}">
+		</geo-location>
+
 		<x-map latitude="{{localLat}}"
 			   longitude="{{localLong}}"
 			   marks="{{marks}}"
 			   mapInfo="{{mapInfo}}"
+			   on-google-map-ready="{{mapReady}}"
 			   disableDefaultUI
 			   dragEvents
 			   mouseEvents
 			   clickEvents>
+			<template repeat="{{marker in marks}}">
+				<x-map-marker latitude="{{marker.latitude}}"
+							  longitude="{{marker.longitude}}"
+							  title="{{marker.name}}"
+							  targetId="{{marker.id}}"
+							  draggable="true"
+							  mouseEvents
+							  clickEvents>
 
-				<template repeat="{{marker in marks}}">
-					<x-map-marker latitude="{{marker.latitude}}"
-								  longitude="{{marker.longitude}}"
-								  title="{{marker.name}}"
-								  targetId="{{marker.id}}"
-								  draggable="true"
-								  mouseEvents
-								  clickEvents>
+					<div id="info_window">
+						<b>title</b><br>
+						<p>Lat: "{{marker.latitude}}"<br>
+						   Lng: "{{marker.longitude}}"
+						</p>
+					</div>
 
-						<div id="info_window">
-							<b>title</b><br>
-							<p>Lat: "{{marker.latitude}}"<br>
-							   Lng: "{{marker.longitude}}"
-							</p>
-							
-						</div>
-
-					</x-map-marker>
-				</template>
+				</x-map-marker>
+			</template>
 		</x-map>
 
-		<template if="{{mapInfo.activeMarker}}">
-				<x-card>
-					<p>
-						Latitude: {{mapInfo.activeMarker.latitude}}<br>
-						Longitude: {{mapInfo.activeMarker.longitude}}
-					</p>
-						<core-icon-button raised id="deleteButton" icon="delete" on-click="{{executeDelete}}"></core-icon-button>
-					
-				</x-card>			
-	 	</template>
+		<div id="controlPanel">
+			<core-field center horizontal layout fullbleed >
+				<core-icon class="lightControlls" icon="search"></core-icon>
+				<input flex placeholder="Search Box" value="{{searchVal}}">
+				<paper-icon-button class="lightControlls" icon="device:gps-fixed" on-click="{{goToHome}}"></paper-icon-button> <!--  -->
+				<paper-icon-button class="lightControlls" icon="more-vert" on-click="{{toggle}}"></paper-icon-button>
+			</core-field>
 
+			<core-collapse id="collapse">
+				<template if="{{mapInfo.activeMarker}}">
+				<div class="collapse-content">
+					<x-card vertical layout fullbleed>
+						<div id="header">
+							Info
+						</div>
+						<div id="content">
+							Latitude: {{mapInfo.activeMarker.latitude}}<br>
+							Longitude: {{mapInfo.activeMarker.longitude}}
+						</div>
+						<div id="controlls" horizontal layout reverse>
+							<core-icon-button id="deleteButton" icon="delete" title="remove marker" on-click="{{executeDelete}}"></core-icon-button>
+							<core-icon-button icon="cloud-upload" title="cloud-upload"></core-icon-button>
+							<core-icon-button icon="favorite" title="favorite" on-click="{{hide}}"></core-icon-button>
+						</div>
+					</x-card>
+				</div>
+				</template>
+			</core-collapse>
+		</div>
 	</template>
 	<script src="js/script.js"></script>
 </polymer-element>

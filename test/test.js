@@ -20,4 +20,5 @@ describe('SERVICE UNIT:', function() {
 
   require('./unit/target');
 
+  require('./unit/tile');
 });
