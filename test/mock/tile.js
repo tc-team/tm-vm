@@ -7,7 +7,7 @@ var Tile = {
 	},
 
 	get: function(username, tileName, callback) {
-		var result = 1;
+		var result = 0;
 		return callback(null, result);
 	},
 
@@ -16,3 +16,5 @@ var Tile = {
 		return callback(null, result);
 	}
 };
+
+module.exports = Tile;
