@@ -15,6 +15,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
 DROP DATABASE IF EXISTS `tm-vm`;
 
 CREATE DATABASE `tm-vm`;
@@ -65,14 +66,6 @@ CREATE TABLE `memo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `memo`
---
-
-LOCK TABLES `memo` WRITE;
-/*!40000 ALTER TABLE `memo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `memo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `price`
@@ -116,8 +109,9 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`),
   KEY `username` (`username`),
   CONSTRAINT `product_ibfk_1` FOREIGN KEY (`username`) REFERENCES `profile` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Table structure for table `profile`
@@ -171,11 +165,8 @@ CREATE TABLE `token` (
   `createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
-
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -185,4 +176,4 @@ CREATE TABLE `token` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-10 14:03:02
+-- Dump completed on 2015-03-20 15:47:15
