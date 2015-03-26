@@ -9,3 +9,6 @@ memos
 
 ### Logs ###
 *.log
+
+### Cache folder ###
+map
