@@ -6,7 +6,7 @@ body {
 	box-sizing: border-box;
 	width: 700px;
 	height: 400px;
-	margin: 400px auto;
+	margin: 200px auto;
 	padding: 0;
 	position: relative;
 	border: 1px solid #000;
@@ -50,7 +50,7 @@ body {
 	line-height: 256px;
 	text-align: center;
 	font-size: 1.7em;
-	/*visibility: hidden;	*/
+	/* visibility: hidden;	*/
 }
 
 #map div {
@@ -62,5 +62,5 @@ body {
 	width: 10px;
 	height: 10px;
 	background-color: blue;
-	visibility: hidden;
+	/* visibility: hidden; */
 }
